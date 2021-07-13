@@ -1,0 +1,79 @@
+{
+	"camera" : 
+	{
+		"camera1_pitch" : -45,
+		"camera1_roll" : 0,
+		"camera1_x" : 5,
+		"camera1_y" : 0,
+		"camera1_yaw" : 0,
+		"camera2_pitch" : -15,
+		"camera2_roll" : 0,
+		"camera2_x" : 5,
+		"camera2_y" : 0,
+		"camera2_yaw" : 30,
+		"cx_1" : 339.52999999999997,
+		"cx_2" : 339.52999999999997,
+		"cy_1" : 231.71000000000001,
+		"cy_2" : 231.71000000000001,
+		"fx_1" : 1084.3199999999999,
+		"fx_2" : 1084.3199999999999,
+		"fy_1" : 1084.05,
+		"fy_2" : 1084.05,
+		"k1_1" : -0.087599999999999997,
+		"k1_2" : -0.087599999999999997,
+		"k2_1" : 0.32596000000000003,
+		"k2_2" : 0.32596000000000003,
+		"k3_1" : -0.086260000000000003,
+		"k3_2" : -0.086260000000000003,
+		"p1_1" : -0.002323,
+		"p1_2" : -0.002323,
+		"p2_1" : 0.0010020000000000001,
+		"p2_2" : 0.0010020000000000001,
+		"roi_height_1" : 484,
+		"roi_height_2" : 484,
+		"roi_offset_x_1" : 0,
+		"roi_offset_x_2" : 0,
+		"roi_offset_y_1" : 0,
+		"roi_offset_y_2" : 0,
+		"roi_width_1" : 656,
+		"roi_width_2" : 656
+	},
+	"config" : 
+	{
+		"camera_sn" : "NULL",
+		"ignore_types" : 
+		[
+			"BE",
+			"RE"
+		],
+		"log_send_target" : false,
+		"save_labelled_boxes" : false,
+		"save_mark" : false,
+		"save_video" : true,
+		"show_armor_box" : true,
+		"show_class_id" : false,
+		"show_energy" : false,
+		"show_energy_extra" : false,
+		"show_info" : false,
+		"show_light_blobs" : false,
+		"show_light_box" : false,
+		"show_mcu_info" : false,
+		"show_net_box" : false,
+		"show_origin" : false,
+		"show_pnp" : true,
+		"show_process" : false,
+		"uart_port" : "/dev/ttyUSB0",
+		"use_pnp" : true,
+		"use_video" : true,
+		"video_path" : "video.mp4",
+		"wait_uart" : false
+	},
+	"config_data" : 
+	{
+		"ARMOR_CAMERA_EXPOSURE" : 4000,
+		"ARMOR_CAMERA_GAIN" : 8,
+		"ENEMY_COLOR" : 0,
+		"ENERGY_CAMERA_EXPOSURE" : 4000,
+		"ENERGY_CAMERA_GAIN" : 5
+	}
+}
