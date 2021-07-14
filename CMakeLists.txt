@@ -14,8 +14,6 @@ message(STATUS "${PROJECT_NAME} started building on ${CMAKE_SYSTEM_NAME}!")
     # 是否编译装甲板
 #    set(compile_armor_detect false)
     set(compile_armor_detect true)
-    # 是否包含CUDA
-    set(compile_cuda false)
 #    set(compile_cuda true)
     # 是否PNP
     set(compile_pnp true)
@@ -26,29 +24,21 @@ configure_file(
 )
 
 # Packages
-# cuda
-if (compile_cuda)
-    find_package(CUDA REQUIRED)
-    include_directories(/usr/local/cuda/include)
-    link_directories(/usr/local/cuda/lib64)
-    include_directories(~/CLionProjects/tiny-tensorrt)
-    link_directories(~/CLionProjects/tiny-tensorrt/build)
-    link_directories(/home/hoshino/CLionProjects/tiny-tensorrt/lib)
-
-endif (compile_cuda)
-
 # OpenCV
 find_package(OpenCV REQUIRED)
 message(STATUS "OpenCV include dirs: ${OpenCV_INCLUDE_DIRS}, lib: ${OpenCV_LIBS}")
 include_directories(${OpenCV_INCLUDE_DIRS})
 # glog
 find_package(glog REQUIRED)
+# Galaxy_U2
+# set(GALAXY_PATH "/home/hoshino/Galaxy_Linux_x86_U2_CN_1.0.2011.9171/Galaxy_U2")
+set(GALAXY_PATH "~/Galaxy_U2")
 
 # Include
 if (compile_armor_detect)
     set(include_dirs
-            "/home/hoshino/Galaxy_Linux_x86_U2_CN_1.0.2011.9171/Galaxy_U2/sdk/include"
-            "/home/hoshino/Galaxy_Linux_x86_U2_CN_1.0.2011.9171/Galaxy_U2/sdk/genicam/library/CPP/include/library/CPP/include"
+            "${GALAXY_PATH}/sdk/include"
+            "${GALAXY_PATH}/sdk/genicam/library/CPP/include/library/CPP/include"
             "${PROJECT_SOURCE_DIR}/include"
             "${PROJECT_SOURCE_DIR}/src/armor/include" "${PROJECT_SOURCE_DIR}/src/armor/src"
             "${PROJECT_SOURCE_DIR}/src/mapping/include" "${PROJECT_SOURCE_DIR}/src/mapping"
@@ -60,8 +50,8 @@ if (compile_armor_detect)
 else (compile_armor_detect)
     set(include_dirs
             "${PROJECT_SOURCE_DIR}/include"
-            "/home/hoshino/Galaxy_Linux_x86_U2_CN_1.0.2011.9171/Galaxy_U2/sdk/include"
-            "/home/hoshino/Galaxy_Linux_x86_U2_CN_1.0.2011.9171/Galaxy_U2/sdk/genicam/library/CPP/include/library/CPP/include"
+            "${GALAXY_PATH}/sdk/include"
+            "${GALAXY_PATH}/sdk/genicam/library/CPP/include/library/CPP/include"
             "${PROJECT_SOURCE_DIR}/src/rmcamera/include" "${PROJECT_SOURCE_DIR}/src/rmcamera"
             "${PROJECT_SOURCE_DIR}/src/rmconfig/include" "${PROJECT_SOURCE_DIR}/src/rmconfig"
             "${PROJECT_SOURCE_DIR}/src/others/include")
@@ -103,8 +93,8 @@ file(COPY ${resources} DESTINATION ${CMAKE_BINARY_DIR}/)
 # Linking
 message(STATUS "u2_camera_root $ENV{GENICAM_ROOT_V2_3}")
 
-link_directories(/home/hoshino/Galaxy_Linux_x86_U2_CN_1.0.2011.9171/Galaxy_U2/sdk/genicam/bin/Linux64_x64)
-link_directories(/home/hoshino/Galaxy_Linux_x86_U2_CN_1.0.2011.9171/Galaxy_U2/sdk/genicam/bin/Linux64_x64/GenApi/Generic)
+link_directories(${GALAXY_PATH}/sdk/genicam/bin/Linux64_x64)
+link_directories(${GALAXY_PATH}/sdk/genicam/bin/Linux64_x64/GenApi/Generic)
 link_libraries(-ldhgentl -lpthread)
 link_libraries(-ldx_image_proc -lGCBase_gcc40_v2_3 -lGenApi_gcc40_v2_3 -llog4cpp_gcc40_v2_3 -lLog_gcc40_v2_3 -lMathParser_gcc40_v2_3)
 add_executable(camera-test ${PROJECT_SOURCE_DIR}/programs/radar_camera-test.cpp ${source_files})
