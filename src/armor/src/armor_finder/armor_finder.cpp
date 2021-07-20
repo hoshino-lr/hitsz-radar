@@ -17,7 +17,7 @@
 #include "rmconfig.h"
 #include <opencv2/highgui.hpp>
 #include <utility>
-
+#include "string.h"
 std::map<int, std::string> id2name = {  //装甲板id到名称的map
     {0, "OO"},   {-1, "NO"},  {1, "B1"},    {2, "B2"},  {3, "B3"},
     {4, "B4"},   {5, "B7"},   {6, "B11"},   {7, "B10"}, {8, "B10_B"},
@@ -42,41 +42,45 @@ std::map<std::string, int> prior_red = {
     {"B4", 7}, {"B5", 7}, {"B7", 8}, {"B2", 9}, {"NO", 10},
 };
 
-ArmorFinder::ArmorFinder(const int &color)
+ArmorFinder::ArmorFinder(const int &color,const int &Id)
 :
       enemy_color(color),
+      id(Id),
       state(SEARCHING_STATE),  //默认为searching模式
       radar_pnp(config->camConfig1,config->camConfig2)
       {
 }
 
-void ArmorFinder::run(cv::Mat &src,cv::Mat &map) {    // 自瞄主函数
+std::vector<cv::Point2d> ArmorFinder::run(cv::Mat &src,cv::Mat &map) {
+  // 自瞄主函数
+  std::vector<cv::Point2d> boxes;
     if (stateSearchingTarget(src)) {
-      std::vector<cv::Point2d> boxes;
       for (auto & i:this->target_box)
       {
         if(i.rect!= cv::Rect2d(0,0,0,0))
         {
-          boxes.push_back(this->radar_pnp.radar_solvePnp(i.rect,radar_pnp.camera_1));
+          boxes.push_back(this->radar_pnp.radar_solvePnp(i.rect,this->id));
         }
         else
         {
           boxes.emplace_back(0,0);
         }
-        boxes = this->wave_fliter(boxes);
       }
-      show_pnp("map",map,boxes);
+      boxes = this->wave_fliter(boxes);
     } else {
       for (auto i = 0; i < target_box.size(); i++) {
         if (target_box[i].rect != cv::Rect2d()) {
           last_box[i] = target_box[i];
         }
+        boxes.emplace_back(0,0);
       }
+      boxes = this->wave_fliter(boxes);
     }
     if (config->show_armor_box) {  // 根据条件显示当前目标装甲板
-//        showArmorBox("box", src, target_box);
-//        cv::waitKey(1);
+        showArmorBox("box"+std::to_string(id), src, target_box);
+        cv::waitKey(1);
     }
+    return boxes;
 }
 
 float ArmorFinder::getPointLength(cv::Point_<float> point) {
@@ -99,18 +103,55 @@ std::vector<cv::Point2d> ArmorFinder::wave_fliter(std::vector<cv::Point2d> now_p
       if (this->points.at(i).filtering[0]==cv::Point2d(0,0))
       {
         this->points.at(i).filtering.push(now_points.at(i));
-        fliter_points.push_back(now_points.at(i));
+        fliter_points.push_back(now_points[i]);
       }
       else
       {
         auto ave_p = this->get_average(i);
         if (this->getPointLength(ave_p-now_points.at(i))<20) {
-          this->points.at(i).filtering.push(now_points.at(i));
+          this->points.at(i).filtering.push(now_points[i]);
         }
         fliter_points.push_back(ave_p);
       }
     }
   }
   return fliter_points;
+}
+
+float get_PointLength(cv::Point_<float> point) {
+return std::sqrt(point.x*point.x+point.y*point.y);
+}
+
+void point_dl(std::vector<cv::Point2d> boxes1,std::vector<cv::Point2d> boxes2,cv::Mat map)
+{
+  std::vector<cv::Point2d> boxes_all;
+  std::vector<cv::Point2d> fi_boxes;
+
+  for (auto &i : boxes1)
+  {
+    fi_boxes.push_back(i);
+    }
+    for(auto &j :boxes2)
+  {
+    fi_boxes.push_back(j);
+  }
+  while(!boxes_all.empty())
+  {
+    bool is_near = false;
+    auto point = boxes_all.back();
+    boxes_all.pop_back();
+    for (auto &i : boxes_all) {
+      if (get_PointLength(i-point)<30)
+      {
+        is_near= true;
+        fi_boxes.push_back((i+point)/2);
+      }
+    }
+    if (!is_near)
+    {
+      fi_boxes.push_back(point);
+    }
+  }
+  show_pnp("map",map,fi_boxes);
 }
 

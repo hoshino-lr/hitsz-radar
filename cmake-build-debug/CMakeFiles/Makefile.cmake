@@ -72,8 +72,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/radar_pnp.dir/DependInfo.cmake"
-  "CMakeFiles/camera-test.dir/DependInfo.cmake"
   "CMakeFiles/ContinuousSubmit.dir/DependInfo.cmake"
   "CMakeFiles/ContinuousCoverage.dir/DependInfo.cmake"
   "CMakeFiles/ContinuousTest.dir/DependInfo.cmake"
@@ -94,6 +92,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/ExperimentalConfigure.dir/DependInfo.cmake"
   "CMakeFiles/ExperimentalCoverage.dir/DependInfo.cmake"
   "CMakeFiles/ExperimentalBuild.dir/DependInfo.cmake"
+  "CMakeFiles/main.dir/DependInfo.cmake"
   "CMakeFiles/NightlyConfigure.dir/DependInfo.cmake"
   "CMakeFiles/ExperimentalTest.dir/DependInfo.cmake"
   "CMakeFiles/ExperimentalMemCheck.dir/DependInfo.cmake"

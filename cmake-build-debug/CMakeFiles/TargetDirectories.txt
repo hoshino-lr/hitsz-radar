@@ -1,7 +1,5 @@
 /home/hoshino/CLionProjects/radarpnp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /home/hoshino/CLionProjects/radarpnp/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/hoshino/CLionProjects/radarpnp/cmake-build-debug/CMakeFiles/radar_pnp.dir
-/home/hoshino/CLionProjects/radarpnp/cmake-build-debug/CMakeFiles/camera-test.dir
 /home/hoshino/CLionProjects/radarpnp/cmake-build-debug/CMakeFiles/ContinuousSubmit.dir
 /home/hoshino/CLionProjects/radarpnp/cmake-build-debug/CMakeFiles/ContinuousCoverage.dir
 /home/hoshino/CLionProjects/radarpnp/cmake-build-debug/CMakeFiles/ContinuousTest.dir
@@ -25,6 +23,7 @@
 /home/hoshino/CLionProjects/radarpnp/cmake-build-debug/CMakeFiles/ExperimentalConfigure.dir
 /home/hoshino/CLionProjects/radarpnp/cmake-build-debug/CMakeFiles/ExperimentalCoverage.dir
 /home/hoshino/CLionProjects/radarpnp/cmake-build-debug/CMakeFiles/ExperimentalBuild.dir
+/home/hoshino/CLionProjects/radarpnp/cmake-build-debug/CMakeFiles/main.dir
 /home/hoshino/CLionProjects/radarpnp/cmake-build-debug/CMakeFiles/NightlyConfigure.dir
 /home/hoshino/CLionProjects/radarpnp/cmake-build-debug/CMakeFiles/ExperimentalTest.dir
 /home/hoshino/CLionProjects/radarpnp/cmake-build-debug/CMakeFiles/ExperimentalMemCheck.dir

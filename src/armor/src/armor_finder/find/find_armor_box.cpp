@@ -116,7 +116,6 @@ bool ArmorFinder::findArmorBox(const cv::Mat &src, std::vector<ArmorBox> &box) {
         it.rect = cv::Rect2d(0, 0, 0, 0);
         it.id = -1;
     }
-
 // 寻找所有可能的灯条
     if (!findLightBlobs(src, light_blobs)) {               //一个可能的灯条也找不到的话
         return false;
@@ -130,8 +129,8 @@ bool ArmorFinder::findArmorBox(const cv::Mat &src, std::vector<ArmorBox> &box) {
         return false;
     }
     if (config->show_armor_box) {
-        showArmorBoxes("boxes", src, armor_boxes);
-        cv::waitKey(1);
+//        showArmorBoxes("boxes"+std::to_string(id), src, armor_boxes);
+//        cv::waitKey(1);
     }
 // 如果分类器可用，则使用分类器对装甲板候选区进行筛选(fenleisici0)
     for (auto & it:last_box)

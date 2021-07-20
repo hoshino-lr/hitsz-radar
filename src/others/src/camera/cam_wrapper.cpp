@@ -116,7 +116,7 @@ void getRGBImage(Camera *p_cam) {
 }
 
 Camera::Camera(int idx, rm::config::camera *config) :
-        sn("RS0039001020"),
+        sn(config->camera_sn),
         index(idx),
         exposure(5000),
         gain(8),
@@ -147,17 +147,20 @@ bool Camera::init() {
   GXInitLib();
   GXUpdateDeviceList(&nDeviceNum, 1000);
   if (nDeviceNum >= 1) {
-      status = GXOpenDeviceByIndex(index, &g_hDevice);
-      LOG(WARNING) << "status" << status ;
+      //status = GXOpenDeviceByIndex(index, &g_hDevice);
+      //LOG(WARNING) << "status" << status ;
       GX_DEVICE_BASE_INFO pBaseinfo[nDeviceNum];
       size_t nSize = nDeviceNum * sizeof(GX_DEVICE_BASE_INFO);
       status = GXGetAllDeviceBaseInfo(pBaseinfo, &nSize);
-      bool found_device = true;
+      bool found_device = false;
       for (int i = 0; i < nDeviceNum; ++i) {
           LOG(INFO) << "device: SN:" << pBaseinfo[i].szSN
                     << " NAME:" << pBaseinfo[i].szDisplayName << " TYPE:"
                     << gc_device_typename[pBaseinfo[i].deviceClass];
-          if (std::string(pBaseinfo[i].szSN) == sn) found_device = true;
+          if (std::string(pBaseinfo[i].szSN) == sn) {
+            found_device = true;
+            this->index = i;
+          }
       }
       if (!found_device) {
           LOG(ERROR) << "No device found with SN:" << sn;
@@ -167,7 +170,7 @@ bool Camera::init() {
       stOpenParam.accessMode = GX_ACCESS_CONTROL;
       stOpenParam.openMode = GX_OPEN_SN;
       stOpenParam.pszContent = const_cast<char *>(sn.c_str());
-     // status = GXOpenDevice(&stOpenParam, &g_hDevice);
+     status = GXOpenDevice(&stOpenParam, &g_hDevice);
       LOG(WARNING) << "status" << status ;
     GXGetInt(g_hDevice, GX_INT_SENSOR_WIDTH, &g_SensorWidth);
     GXGetInt(g_hDevice, GX_INT_SENSOR_HEIGHT, &g_SensorHeight);

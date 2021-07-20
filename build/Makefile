@@ -144,19 +144,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named camera-test
-
-# Build rule for target.
-camera-test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 camera-test
-.PHONY : camera-test
-
-# fast build rule for target.
-camera-test/fast:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/build
-.PHONY : camera-test/fast
-
-#=============================================================================
 # Target rules for targets named NightlyMemCheck
 
 # Build rule for target.
@@ -168,19 +155,6 @@ NightlyMemCheck: cmake_check_build_system
 NightlyMemCheck/fast:
 	$(MAKE) -f CMakeFiles/NightlyMemCheck.dir/build.make CMakeFiles/NightlyMemCheck.dir/build
 .PHONY : NightlyMemCheck/fast
-
-#=============================================================================
-# Target rules for targets named NightlyTest
-
-# Build rule for target.
-NightlyTest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 NightlyTest
-.PHONY : NightlyTest
-
-# fast build rule for target.
-NightlyTest/fast:
-	$(MAKE) -f CMakeFiles/NightlyTest.dir/build.make CMakeFiles/NightlyTest.dir/build
-.PHONY : NightlyTest/fast
 
 #=============================================================================
 # Target rules for targets named ContinuousConfigure
@@ -220,19 +194,6 @@ NightlyConfigure: cmake_check_build_system
 NightlyConfigure/fast:
 	$(MAKE) -f CMakeFiles/NightlyConfigure.dir/build.make CMakeFiles/NightlyConfigure.dir/build
 .PHONY : NightlyConfigure/fast
-
-#=============================================================================
-# Target rules for targets named radar_pnp
-
-# Build rule for target.
-radar_pnp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 radar_pnp
-.PHONY : radar_pnp
-
-# fast build rule for target.
-radar_pnp/fast:
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/build
-.PHONY : radar_pnp/fast
 
 #=============================================================================
 # Target rules for targets named NightlyMemoryCheck
@@ -363,6 +324,32 @@ Continuous: cmake_check_build_system
 Continuous/fast:
 	$(MAKE) -f CMakeFiles/Continuous.dir/build.make CMakeFiles/Continuous.dir/build
 .PHONY : Continuous/fast
+
+#=============================================================================
+# Target rules for targets named NightlyTest
+
+# Build rule for target.
+NightlyTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 NightlyTest
+.PHONY : NightlyTest
+
+# fast build rule for target.
+NightlyTest/fast:
+	$(MAKE) -f CMakeFiles/NightlyTest.dir/build.make CMakeFiles/NightlyTest.dir/build
+.PHONY : NightlyTest/fast
+
+#=============================================================================
+# Target rules for targets named main
+
+# Build rule for target.
+main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main
+.PHONY : main
+
+# fast build rule for target.
+main/fast:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
 
 #=============================================================================
 # Target rules for targets named Nightly
@@ -533,59 +520,32 @@ ContinuousSubmit/fast:
 	$(MAKE) -f CMakeFiles/ContinuousSubmit.dir/build.make CMakeFiles/ContinuousSubmit.dir/build
 .PHONY : ContinuousSubmit/fast
 
-programs/pnp_test.o: programs/pnp_test.cpp.o
+main.o: main.cpp.o
 
-.PHONY : programs/pnp_test.o
-
-# target to build an object file
-programs/pnp_test.cpp.o:
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/programs/pnp_test.cpp.o
-.PHONY : programs/pnp_test.cpp.o
-
-programs/pnp_test.i: programs/pnp_test.cpp.i
-
-.PHONY : programs/pnp_test.i
-
-# target to preprocess a source file
-programs/pnp_test.cpp.i:
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/programs/pnp_test.cpp.i
-.PHONY : programs/pnp_test.cpp.i
-
-programs/pnp_test.s: programs/pnp_test.cpp.s
-
-.PHONY : programs/pnp_test.s
-
-# target to generate assembly for a file
-programs/pnp_test.cpp.s:
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/programs/pnp_test.cpp.s
-.PHONY : programs/pnp_test.cpp.s
-
-programs/radar_camera-test.o: programs/radar_camera-test.cpp.o
-
-.PHONY : programs/radar_camera-test.o
+.PHONY : main.o
 
 # target to build an object file
-programs/radar_camera-test.cpp.o:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/programs/radar_camera-test.cpp.o
-.PHONY : programs/radar_camera-test.cpp.o
+main.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.o
+.PHONY : main.cpp.o
 
-programs/radar_camera-test.i: programs/radar_camera-test.cpp.i
+main.i: main.cpp.i
 
-.PHONY : programs/radar_camera-test.i
+.PHONY : main.i
 
 # target to preprocess a source file
-programs/radar_camera-test.cpp.i:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/programs/radar_camera-test.cpp.i
-.PHONY : programs/radar_camera-test.cpp.i
+main.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-programs/radar_camera-test.s: programs/radar_camera-test.cpp.s
+main.s: main.cpp.s
 
-.PHONY : programs/radar_camera-test.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-programs/radar_camera-test.cpp.s:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/programs/radar_camera-test.cpp.s
-.PHONY : programs/radar_camera-test.cpp.s
+main.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 src/armor/src/armor_finder/armor_box/armor_box.o: src/armor/src/armor_finder/armor_box/armor_box.cpp.o
 
@@ -593,8 +553,7 @@ src/armor/src/armor_finder/armor_box/armor_box.o: src/armor/src/armor_finder/arm
 
 # target to build an object file
 src/armor/src/armor_finder/armor_box/armor_box.cpp.o:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/armor/src/armor_finder/armor_box/armor_box.cpp.o
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/armor/src/armor_finder/armor_box/armor_box.cpp.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/armor/src/armor_finder/armor_box/armor_box.cpp.o
 .PHONY : src/armor/src/armor_finder/armor_box/armor_box.cpp.o
 
 src/armor/src/armor_finder/armor_box/armor_box.i: src/armor/src/armor_finder/armor_box/armor_box.cpp.i
@@ -603,8 +562,7 @@ src/armor/src/armor_finder/armor_box/armor_box.i: src/armor/src/armor_finder/arm
 
 # target to preprocess a source file
 src/armor/src/armor_finder/armor_box/armor_box.cpp.i:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/armor/src/armor_finder/armor_box/armor_box.cpp.i
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/armor/src/armor_finder/armor_box/armor_box.cpp.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/armor/src/armor_finder/armor_box/armor_box.cpp.i
 .PHONY : src/armor/src/armor_finder/armor_box/armor_box.cpp.i
 
 src/armor/src/armor_finder/armor_box/armor_box.s: src/armor/src/armor_finder/armor_box/armor_box.cpp.s
@@ -613,8 +571,7 @@ src/armor/src/armor_finder/armor_box/armor_box.s: src/armor/src/armor_finder/arm
 
 # target to generate assembly for a file
 src/armor/src/armor_finder/armor_box/armor_box.cpp.s:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/armor/src/armor_finder/armor_box/armor_box.cpp.s
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/armor/src/armor_finder/armor_box/armor_box.cpp.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/armor/src/armor_finder/armor_box/armor_box.cpp.s
 .PHONY : src/armor/src/armor_finder/armor_box/armor_box.cpp.s
 
 src/armor/src/armor_finder/armor_finder.o: src/armor/src/armor_finder/armor_finder.cpp.o
@@ -623,8 +580,7 @@ src/armor/src/armor_finder/armor_finder.o: src/armor/src/armor_finder/armor_find
 
 # target to build an object file
 src/armor/src/armor_finder/armor_finder.cpp.o:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/armor/src/armor_finder/armor_finder.cpp.o
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/armor/src/armor_finder/armor_finder.cpp.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/armor/src/armor_finder/armor_finder.cpp.o
 .PHONY : src/armor/src/armor_finder/armor_finder.cpp.o
 
 src/armor/src/armor_finder/armor_finder.i: src/armor/src/armor_finder/armor_finder.cpp.i
@@ -633,8 +589,7 @@ src/armor/src/armor_finder/armor_finder.i: src/armor/src/armor_finder/armor_find
 
 # target to preprocess a source file
 src/armor/src/armor_finder/armor_finder.cpp.i:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/armor/src/armor_finder/armor_finder.cpp.i
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/armor/src/armor_finder/armor_finder.cpp.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/armor/src/armor_finder/armor_finder.cpp.i
 .PHONY : src/armor/src/armor_finder/armor_finder.cpp.i
 
 src/armor/src/armor_finder/armor_finder.s: src/armor/src/armor_finder/armor_finder.cpp.s
@@ -643,8 +598,7 @@ src/armor/src/armor_finder/armor_finder.s: src/armor/src/armor_finder/armor_find
 
 # target to generate assembly for a file
 src/armor/src/armor_finder/armor_finder.cpp.s:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/armor/src/armor_finder/armor_finder.cpp.s
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/armor/src/armor_finder/armor_finder.cpp.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/armor/src/armor_finder/armor_finder.cpp.s
 .PHONY : src/armor/src/armor_finder/armor_finder.cpp.s
 
 src/armor/src/armor_finder/find/find_armor_box.o: src/armor/src/armor_finder/find/find_armor_box.cpp.o
@@ -653,8 +607,7 @@ src/armor/src/armor_finder/find/find_armor_box.o: src/armor/src/armor_finder/fin
 
 # target to build an object file
 src/armor/src/armor_finder/find/find_armor_box.cpp.o:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/armor/src/armor_finder/find/find_armor_box.cpp.o
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/armor/src/armor_finder/find/find_armor_box.cpp.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/armor/src/armor_finder/find/find_armor_box.cpp.o
 .PHONY : src/armor/src/armor_finder/find/find_armor_box.cpp.o
 
 src/armor/src/armor_finder/find/find_armor_box.i: src/armor/src/armor_finder/find/find_armor_box.cpp.i
@@ -663,8 +616,7 @@ src/armor/src/armor_finder/find/find_armor_box.i: src/armor/src/armor_finder/fin
 
 # target to preprocess a source file
 src/armor/src/armor_finder/find/find_armor_box.cpp.i:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/armor/src/armor_finder/find/find_armor_box.cpp.i
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/armor/src/armor_finder/find/find_armor_box.cpp.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/armor/src/armor_finder/find/find_armor_box.cpp.i
 .PHONY : src/armor/src/armor_finder/find/find_armor_box.cpp.i
 
 src/armor/src/armor_finder/find/find_armor_box.s: src/armor/src/armor_finder/find/find_armor_box.cpp.s
@@ -673,8 +625,7 @@ src/armor/src/armor_finder/find/find_armor_box.s: src/armor/src/armor_finder/fin
 
 # target to generate assembly for a file
 src/armor/src/armor_finder/find/find_armor_box.cpp.s:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/armor/src/armor_finder/find/find_armor_box.cpp.s
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/armor/src/armor_finder/find/find_armor_box.cpp.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/armor/src/armor_finder/find/find_armor_box.cpp.s
 .PHONY : src/armor/src/armor_finder/find/find_armor_box.cpp.s
 
 src/armor/src/armor_finder/find/find_light_blobs.o: src/armor/src/armor_finder/find/find_light_blobs.cpp.o
@@ -683,8 +634,7 @@ src/armor/src/armor_finder/find/find_light_blobs.o: src/armor/src/armor_finder/f
 
 # target to build an object file
 src/armor/src/armor_finder/find/find_light_blobs.cpp.o:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/armor/src/armor_finder/find/find_light_blobs.cpp.o
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/armor/src/armor_finder/find/find_light_blobs.cpp.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/armor/src/armor_finder/find/find_light_blobs.cpp.o
 .PHONY : src/armor/src/armor_finder/find/find_light_blobs.cpp.o
 
 src/armor/src/armor_finder/find/find_light_blobs.i: src/armor/src/armor_finder/find/find_light_blobs.cpp.i
@@ -693,8 +643,7 @@ src/armor/src/armor_finder/find/find_light_blobs.i: src/armor/src/armor_finder/f
 
 # target to preprocess a source file
 src/armor/src/armor_finder/find/find_light_blobs.cpp.i:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/armor/src/armor_finder/find/find_light_blobs.cpp.i
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/armor/src/armor_finder/find/find_light_blobs.cpp.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/armor/src/armor_finder/find/find_light_blobs.cpp.i
 .PHONY : src/armor/src/armor_finder/find/find_light_blobs.cpp.i
 
 src/armor/src/armor_finder/find/find_light_blobs.s: src/armor/src/armor_finder/find/find_light_blobs.cpp.s
@@ -703,8 +652,7 @@ src/armor/src/armor_finder/find/find_light_blobs.s: src/armor/src/armor_finder/f
 
 # target to generate assembly for a file
 src/armor/src/armor_finder/find/find_light_blobs.cpp.s:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/armor/src/armor_finder/find/find_light_blobs.cpp.s
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/armor/src/armor_finder/find/find_light_blobs.cpp.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/armor/src/armor_finder/find/find_light_blobs.cpp.s
 .PHONY : src/armor/src/armor_finder/find/find_light_blobs.cpp.s
 
 src/armor/src/armor_finder/searching_state/searching_state.o: src/armor/src/armor_finder/searching_state/searching_state.cpp.o
@@ -713,8 +661,7 @@ src/armor/src/armor_finder/searching_state/searching_state.o: src/armor/src/armo
 
 # target to build an object file
 src/armor/src/armor_finder/searching_state/searching_state.cpp.o:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/armor/src/armor_finder/searching_state/searching_state.cpp.o
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/armor/src/armor_finder/searching_state/searching_state.cpp.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/armor/src/armor_finder/searching_state/searching_state.cpp.o
 .PHONY : src/armor/src/armor_finder/searching_state/searching_state.cpp.o
 
 src/armor/src/armor_finder/searching_state/searching_state.i: src/armor/src/armor_finder/searching_state/searching_state.cpp.i
@@ -723,8 +670,7 @@ src/armor/src/armor_finder/searching_state/searching_state.i: src/armor/src/armo
 
 # target to preprocess a source file
 src/armor/src/armor_finder/searching_state/searching_state.cpp.i:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/armor/src/armor_finder/searching_state/searching_state.cpp.i
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/armor/src/armor_finder/searching_state/searching_state.cpp.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/armor/src/armor_finder/searching_state/searching_state.cpp.i
 .PHONY : src/armor/src/armor_finder/searching_state/searching_state.cpp.i
 
 src/armor/src/armor_finder/searching_state/searching_state.s: src/armor/src/armor_finder/searching_state/searching_state.cpp.s
@@ -733,8 +679,7 @@ src/armor/src/armor_finder/searching_state/searching_state.s: src/armor/src/armo
 
 # target to generate assembly for a file
 src/armor/src/armor_finder/searching_state/searching_state.cpp.s:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/armor/src/armor_finder/searching_state/searching_state.cpp.s
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/armor/src/armor_finder/searching_state/searching_state.cpp.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/armor/src/armor_finder/searching_state/searching_state.cpp.s
 .PHONY : src/armor/src/armor_finder/searching_state/searching_state.cpp.s
 
 src/armor/src/armor_finder/send_target/send_target.o: src/armor/src/armor_finder/send_target/send_target.cpp.o
@@ -743,8 +688,7 @@ src/armor/src/armor_finder/send_target/send_target.o: src/armor/src/armor_finder
 
 # target to build an object file
 src/armor/src/armor_finder/send_target/send_target.cpp.o:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/armor/src/armor_finder/send_target/send_target.cpp.o
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/armor/src/armor_finder/send_target/send_target.cpp.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/armor/src/armor_finder/send_target/send_target.cpp.o
 .PHONY : src/armor/src/armor_finder/send_target/send_target.cpp.o
 
 src/armor/src/armor_finder/send_target/send_target.i: src/armor/src/armor_finder/send_target/send_target.cpp.i
@@ -753,8 +697,7 @@ src/armor/src/armor_finder/send_target/send_target.i: src/armor/src/armor_finder
 
 # target to preprocess a source file
 src/armor/src/armor_finder/send_target/send_target.cpp.i:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/armor/src/armor_finder/send_target/send_target.cpp.i
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/armor/src/armor_finder/send_target/send_target.cpp.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/armor/src/armor_finder/send_target/send_target.cpp.i
 .PHONY : src/armor/src/armor_finder/send_target/send_target.cpp.i
 
 src/armor/src/armor_finder/send_target/send_target.s: src/armor/src/armor_finder/send_target/send_target.cpp.s
@@ -763,8 +706,7 @@ src/armor/src/armor_finder/send_target/send_target.s: src/armor/src/armor_finder
 
 # target to generate assembly for a file
 src/armor/src/armor_finder/send_target/send_target.cpp.s:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/armor/src/armor_finder/send_target/send_target.cpp.s
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/armor/src/armor_finder/send_target/send_target.cpp.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/armor/src/armor_finder/send_target/send_target.cpp.s
 .PHONY : src/armor/src/armor_finder/send_target/send_target.cpp.s
 
 src/armor/src/show_images/show_images.o: src/armor/src/show_images/show_images.cpp.o
@@ -773,8 +715,7 @@ src/armor/src/show_images/show_images.o: src/armor/src/show_images/show_images.c
 
 # target to build an object file
 src/armor/src/show_images/show_images.cpp.o:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/armor/src/show_images/show_images.cpp.o
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/armor/src/show_images/show_images.cpp.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/armor/src/show_images/show_images.cpp.o
 .PHONY : src/armor/src/show_images/show_images.cpp.o
 
 src/armor/src/show_images/show_images.i: src/armor/src/show_images/show_images.cpp.i
@@ -783,8 +724,7 @@ src/armor/src/show_images/show_images.i: src/armor/src/show_images/show_images.c
 
 # target to preprocess a source file
 src/armor/src/show_images/show_images.cpp.i:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/armor/src/show_images/show_images.cpp.i
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/armor/src/show_images/show_images.cpp.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/armor/src/show_images/show_images.cpp.i
 .PHONY : src/armor/src/show_images/show_images.cpp.i
 
 src/armor/src/show_images/show_images.s: src/armor/src/show_images/show_images.cpp.s
@@ -793,8 +733,7 @@ src/armor/src/show_images/show_images.s: src/armor/src/show_images/show_images.c
 
 # target to generate assembly for a file
 src/armor/src/show_images/show_images.cpp.s:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/armor/src/show_images/show_images.cpp.s
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/armor/src/show_images/show_images.cpp.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/armor/src/show_images/show_images.cpp.s
 .PHONY : src/armor/src/show_images/show_images.cpp.s
 
 src/com/src/CRC.o: src/com/src/CRC.cpp.o
@@ -803,8 +742,7 @@ src/com/src/CRC.o: src/com/src/CRC.cpp.o
 
 # target to build an object file
 src/com/src/CRC.cpp.o:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/com/src/CRC.cpp.o
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/com/src/CRC.cpp.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/com/src/CRC.cpp.o
 .PHONY : src/com/src/CRC.cpp.o
 
 src/com/src/CRC.i: src/com/src/CRC.cpp.i
@@ -813,8 +751,7 @@ src/com/src/CRC.i: src/com/src/CRC.cpp.i
 
 # target to preprocess a source file
 src/com/src/CRC.cpp.i:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/com/src/CRC.cpp.i
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/com/src/CRC.cpp.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/com/src/CRC.cpp.i
 .PHONY : src/com/src/CRC.cpp.i
 
 src/com/src/CRC.s: src/com/src/CRC.cpp.s
@@ -823,8 +760,7 @@ src/com/src/CRC.s: src/com/src/CRC.cpp.s
 
 # target to generate assembly for a file
 src/com/src/CRC.cpp.s:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/com/src/CRC.cpp.s
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/com/src/CRC.cpp.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/com/src/CRC.cpp.s
 .PHONY : src/com/src/CRC.cpp.s
 
 src/com/src/impl/list_ports/list_ports_linux.o: src/com/src/impl/list_ports/list_ports_linux.cc.o
@@ -833,8 +769,7 @@ src/com/src/impl/list_ports/list_ports_linux.o: src/com/src/impl/list_ports/list
 
 # target to build an object file
 src/com/src/impl/list_ports/list_ports_linux.cc.o:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/com/src/impl/list_ports/list_ports_linux.cc.o
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/com/src/impl/list_ports/list_ports_linux.cc.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/com/src/impl/list_ports/list_ports_linux.cc.o
 .PHONY : src/com/src/impl/list_ports/list_ports_linux.cc.o
 
 src/com/src/impl/list_ports/list_ports_linux.i: src/com/src/impl/list_ports/list_ports_linux.cc.i
@@ -843,8 +778,7 @@ src/com/src/impl/list_ports/list_ports_linux.i: src/com/src/impl/list_ports/list
 
 # target to preprocess a source file
 src/com/src/impl/list_ports/list_ports_linux.cc.i:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/com/src/impl/list_ports/list_ports_linux.cc.i
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/com/src/impl/list_ports/list_ports_linux.cc.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/com/src/impl/list_ports/list_ports_linux.cc.i
 .PHONY : src/com/src/impl/list_ports/list_ports_linux.cc.i
 
 src/com/src/impl/list_ports/list_ports_linux.s: src/com/src/impl/list_ports/list_ports_linux.cc.s
@@ -853,8 +787,7 @@ src/com/src/impl/list_ports/list_ports_linux.s: src/com/src/impl/list_ports/list
 
 # target to generate assembly for a file
 src/com/src/impl/list_ports/list_ports_linux.cc.s:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/com/src/impl/list_ports/list_ports_linux.cc.s
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/com/src/impl/list_ports/list_ports_linux.cc.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/com/src/impl/list_ports/list_ports_linux.cc.s
 .PHONY : src/com/src/impl/list_ports/list_ports_linux.cc.s
 
 src/com/src/impl/list_ports/list_ports_osx.o: src/com/src/impl/list_ports/list_ports_osx.cc.o
@@ -863,8 +796,7 @@ src/com/src/impl/list_ports/list_ports_osx.o: src/com/src/impl/list_ports/list_p
 
 # target to build an object file
 src/com/src/impl/list_ports/list_ports_osx.cc.o:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/com/src/impl/list_ports/list_ports_osx.cc.o
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/com/src/impl/list_ports/list_ports_osx.cc.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/com/src/impl/list_ports/list_ports_osx.cc.o
 .PHONY : src/com/src/impl/list_ports/list_ports_osx.cc.o
 
 src/com/src/impl/list_ports/list_ports_osx.i: src/com/src/impl/list_ports/list_ports_osx.cc.i
@@ -873,8 +805,7 @@ src/com/src/impl/list_ports/list_ports_osx.i: src/com/src/impl/list_ports/list_p
 
 # target to preprocess a source file
 src/com/src/impl/list_ports/list_ports_osx.cc.i:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/com/src/impl/list_ports/list_ports_osx.cc.i
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/com/src/impl/list_ports/list_ports_osx.cc.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/com/src/impl/list_ports/list_ports_osx.cc.i
 .PHONY : src/com/src/impl/list_ports/list_ports_osx.cc.i
 
 src/com/src/impl/list_ports/list_ports_osx.s: src/com/src/impl/list_ports/list_ports_osx.cc.s
@@ -883,8 +814,7 @@ src/com/src/impl/list_ports/list_ports_osx.s: src/com/src/impl/list_ports/list_p
 
 # target to generate assembly for a file
 src/com/src/impl/list_ports/list_ports_osx.cc.s:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/com/src/impl/list_ports/list_ports_osx.cc.s
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/com/src/impl/list_ports/list_ports_osx.cc.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/com/src/impl/list_ports/list_ports_osx.cc.s
 .PHONY : src/com/src/impl/list_ports/list_ports_osx.cc.s
 
 src/com/src/impl/list_ports/list_ports_win.o: src/com/src/impl/list_ports/list_ports_win.cc.o
@@ -893,8 +823,7 @@ src/com/src/impl/list_ports/list_ports_win.o: src/com/src/impl/list_ports/list_p
 
 # target to build an object file
 src/com/src/impl/list_ports/list_ports_win.cc.o:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/com/src/impl/list_ports/list_ports_win.cc.o
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/com/src/impl/list_ports/list_ports_win.cc.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/com/src/impl/list_ports/list_ports_win.cc.o
 .PHONY : src/com/src/impl/list_ports/list_ports_win.cc.o
 
 src/com/src/impl/list_ports/list_ports_win.i: src/com/src/impl/list_ports/list_ports_win.cc.i
@@ -903,8 +832,7 @@ src/com/src/impl/list_ports/list_ports_win.i: src/com/src/impl/list_ports/list_p
 
 # target to preprocess a source file
 src/com/src/impl/list_ports/list_ports_win.cc.i:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/com/src/impl/list_ports/list_ports_win.cc.i
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/com/src/impl/list_ports/list_ports_win.cc.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/com/src/impl/list_ports/list_ports_win.cc.i
 .PHONY : src/com/src/impl/list_ports/list_ports_win.cc.i
 
 src/com/src/impl/list_ports/list_ports_win.s: src/com/src/impl/list_ports/list_ports_win.cc.s
@@ -913,8 +841,7 @@ src/com/src/impl/list_ports/list_ports_win.s: src/com/src/impl/list_ports/list_p
 
 # target to generate assembly for a file
 src/com/src/impl/list_ports/list_ports_win.cc.s:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/com/src/impl/list_ports/list_ports_win.cc.s
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/com/src/impl/list_ports/list_ports_win.cc.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/com/src/impl/list_ports/list_ports_win.cc.s
 .PHONY : src/com/src/impl/list_ports/list_ports_win.cc.s
 
 src/com/src/impl/unix.o: src/com/src/impl/unix.cc.o
@@ -923,8 +850,7 @@ src/com/src/impl/unix.o: src/com/src/impl/unix.cc.o
 
 # target to build an object file
 src/com/src/impl/unix.cc.o:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/com/src/impl/unix.cc.o
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/com/src/impl/unix.cc.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/com/src/impl/unix.cc.o
 .PHONY : src/com/src/impl/unix.cc.o
 
 src/com/src/impl/unix.i: src/com/src/impl/unix.cc.i
@@ -933,8 +859,7 @@ src/com/src/impl/unix.i: src/com/src/impl/unix.cc.i
 
 # target to preprocess a source file
 src/com/src/impl/unix.cc.i:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/com/src/impl/unix.cc.i
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/com/src/impl/unix.cc.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/com/src/impl/unix.cc.i
 .PHONY : src/com/src/impl/unix.cc.i
 
 src/com/src/impl/unix.s: src/com/src/impl/unix.cc.s
@@ -943,8 +868,7 @@ src/com/src/impl/unix.s: src/com/src/impl/unix.cc.s
 
 # target to generate assembly for a file
 src/com/src/impl/unix.cc.s:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/com/src/impl/unix.cc.s
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/com/src/impl/unix.cc.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/com/src/impl/unix.cc.s
 .PHONY : src/com/src/impl/unix.cc.s
 
 src/com/src/impl/win.o: src/com/src/impl/win.cc.o
@@ -953,8 +877,7 @@ src/com/src/impl/win.o: src/com/src/impl/win.cc.o
 
 # target to build an object file
 src/com/src/impl/win.cc.o:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/com/src/impl/win.cc.o
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/com/src/impl/win.cc.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/com/src/impl/win.cc.o
 .PHONY : src/com/src/impl/win.cc.o
 
 src/com/src/impl/win.i: src/com/src/impl/win.cc.i
@@ -963,8 +886,7 @@ src/com/src/impl/win.i: src/com/src/impl/win.cc.i
 
 # target to preprocess a source file
 src/com/src/impl/win.cc.i:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/com/src/impl/win.cc.i
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/com/src/impl/win.cc.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/com/src/impl/win.cc.i
 .PHONY : src/com/src/impl/win.cc.i
 
 src/com/src/impl/win.s: src/com/src/impl/win.cc.s
@@ -973,8 +895,7 @@ src/com/src/impl/win.s: src/com/src/impl/win.cc.s
 
 # target to generate assembly for a file
 src/com/src/impl/win.cc.s:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/com/src/impl/win.cc.s
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/com/src/impl/win.cc.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/com/src/impl/win.cc.s
 .PHONY : src/com/src/impl/win.cc.s
 
 src/com/src/mcu_send.o: src/com/src/mcu_send.cpp.o
@@ -983,8 +904,7 @@ src/com/src/mcu_send.o: src/com/src/mcu_send.cpp.o
 
 # target to build an object file
 src/com/src/mcu_send.cpp.o:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/com/src/mcu_send.cpp.o
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/com/src/mcu_send.cpp.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/com/src/mcu_send.cpp.o
 .PHONY : src/com/src/mcu_send.cpp.o
 
 src/com/src/mcu_send.i: src/com/src/mcu_send.cpp.i
@@ -993,8 +913,7 @@ src/com/src/mcu_send.i: src/com/src/mcu_send.cpp.i
 
 # target to preprocess a source file
 src/com/src/mcu_send.cpp.i:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/com/src/mcu_send.cpp.i
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/com/src/mcu_send.cpp.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/com/src/mcu_send.cpp.i
 .PHONY : src/com/src/mcu_send.cpp.i
 
 src/com/src/mcu_send.s: src/com/src/mcu_send.cpp.s
@@ -1003,8 +922,7 @@ src/com/src/mcu_send.s: src/com/src/mcu_send.cpp.s
 
 # target to generate assembly for a file
 src/com/src/mcu_send.cpp.s:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/com/src/mcu_send.cpp.s
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/com/src/mcu_send.cpp.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/com/src/mcu_send.cpp.s
 .PHONY : src/com/src/mcu_send.cpp.s
 
 src/com/src/rmreference.o: src/com/src/rmreference.cpp.o
@@ -1013,8 +931,7 @@ src/com/src/rmreference.o: src/com/src/rmreference.cpp.o
 
 # target to build an object file
 src/com/src/rmreference.cpp.o:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/com/src/rmreference.cpp.o
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/com/src/rmreference.cpp.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/com/src/rmreference.cpp.o
 .PHONY : src/com/src/rmreference.cpp.o
 
 src/com/src/rmreference.i: src/com/src/rmreference.cpp.i
@@ -1023,8 +940,7 @@ src/com/src/rmreference.i: src/com/src/rmreference.cpp.i
 
 # target to preprocess a source file
 src/com/src/rmreference.cpp.i:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/com/src/rmreference.cpp.i
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/com/src/rmreference.cpp.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/com/src/rmreference.cpp.i
 .PHONY : src/com/src/rmreference.cpp.i
 
 src/com/src/rmreference.s: src/com/src/rmreference.cpp.s
@@ -1033,8 +949,7 @@ src/com/src/rmreference.s: src/com/src/rmreference.cpp.s
 
 # target to generate assembly for a file
 src/com/src/rmreference.cpp.s:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/com/src/rmreference.cpp.s
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/com/src/rmreference.cpp.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/com/src/rmreference.cpp.s
 .PHONY : src/com/src/rmreference.cpp.s
 
 src/com/src/rmserial.o: src/com/src/rmserial.cpp.o
@@ -1043,8 +958,7 @@ src/com/src/rmserial.o: src/com/src/rmserial.cpp.o
 
 # target to build an object file
 src/com/src/rmserial.cpp.o:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/com/src/rmserial.cpp.o
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/com/src/rmserial.cpp.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/com/src/rmserial.cpp.o
 .PHONY : src/com/src/rmserial.cpp.o
 
 src/com/src/rmserial.i: src/com/src/rmserial.cpp.i
@@ -1053,8 +967,7 @@ src/com/src/rmserial.i: src/com/src/rmserial.cpp.i
 
 # target to preprocess a source file
 src/com/src/rmserial.cpp.i:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/com/src/rmserial.cpp.i
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/com/src/rmserial.cpp.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/com/src/rmserial.cpp.i
 .PHONY : src/com/src/rmserial.cpp.i
 
 src/com/src/rmserial.s: src/com/src/rmserial.cpp.s
@@ -1063,8 +976,7 @@ src/com/src/rmserial.s: src/com/src/rmserial.cpp.s
 
 # target to generate assembly for a file
 src/com/src/rmserial.cpp.s:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/com/src/rmserial.cpp.s
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/com/src/rmserial.cpp.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/com/src/rmserial.cpp.s
 .PHONY : src/com/src/rmserial.cpp.s
 
 src/com/src/serial.o: src/com/src/serial.cc.o
@@ -1073,8 +985,7 @@ src/com/src/serial.o: src/com/src/serial.cc.o
 
 # target to build an object file
 src/com/src/serial.cc.o:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/com/src/serial.cc.o
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/com/src/serial.cc.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/com/src/serial.cc.o
 .PHONY : src/com/src/serial.cc.o
 
 src/com/src/serial.i: src/com/src/serial.cc.i
@@ -1083,8 +994,7 @@ src/com/src/serial.i: src/com/src/serial.cc.i
 
 # target to preprocess a source file
 src/com/src/serial.cc.i:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/com/src/serial.cc.i
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/com/src/serial.cc.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/com/src/serial.cc.i
 .PHONY : src/com/src/serial.cc.i
 
 src/com/src/serial.s: src/com/src/serial.cc.s
@@ -1093,8 +1003,7 @@ src/com/src/serial.s: src/com/src/serial.cc.s
 
 # target to generate assembly for a file
 src/com/src/serial.cc.s:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/com/src/serial.cc.s
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/com/src/serial.cc.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/com/src/serial.cc.s
 .PHONY : src/com/src/serial.cc.s
 
 src/mapping/src/3Dpnp.o: src/mapping/src/3Dpnp.cpp.o
@@ -1103,8 +1012,7 @@ src/mapping/src/3Dpnp.o: src/mapping/src/3Dpnp.cpp.o
 
 # target to build an object file
 src/mapping/src/3Dpnp.cpp.o:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/mapping/src/3Dpnp.cpp.o
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/mapping/src/3Dpnp.cpp.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mapping/src/3Dpnp.cpp.o
 .PHONY : src/mapping/src/3Dpnp.cpp.o
 
 src/mapping/src/3Dpnp.i: src/mapping/src/3Dpnp.cpp.i
@@ -1113,8 +1021,7 @@ src/mapping/src/3Dpnp.i: src/mapping/src/3Dpnp.cpp.i
 
 # target to preprocess a source file
 src/mapping/src/3Dpnp.cpp.i:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/mapping/src/3Dpnp.cpp.i
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/mapping/src/3Dpnp.cpp.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mapping/src/3Dpnp.cpp.i
 .PHONY : src/mapping/src/3Dpnp.cpp.i
 
 src/mapping/src/3Dpnp.s: src/mapping/src/3Dpnp.cpp.s
@@ -1123,8 +1030,7 @@ src/mapping/src/3Dpnp.s: src/mapping/src/3Dpnp.cpp.s
 
 # target to generate assembly for a file
 src/mapping/src/3Dpnp.cpp.s:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/mapping/src/3Dpnp.cpp.s
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/mapping/src/3Dpnp.cpp.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mapping/src/3Dpnp.cpp.s
 .PHONY : src/mapping/src/3Dpnp.cpp.s
 
 src/mapping/src/kdTree.o: src/mapping/src/kdTree.cpp.o
@@ -1133,8 +1039,7 @@ src/mapping/src/kdTree.o: src/mapping/src/kdTree.cpp.o
 
 # target to build an object file
 src/mapping/src/kdTree.cpp.o:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/mapping/src/kdTree.cpp.o
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/mapping/src/kdTree.cpp.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mapping/src/kdTree.cpp.o
 .PHONY : src/mapping/src/kdTree.cpp.o
 
 src/mapping/src/kdTree.i: src/mapping/src/kdTree.cpp.i
@@ -1143,8 +1048,7 @@ src/mapping/src/kdTree.i: src/mapping/src/kdTree.cpp.i
 
 # target to preprocess a source file
 src/mapping/src/kdTree.cpp.i:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/mapping/src/kdTree.cpp.i
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/mapping/src/kdTree.cpp.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mapping/src/kdTree.cpp.i
 .PHONY : src/mapping/src/kdTree.cpp.i
 
 src/mapping/src/kdTree.s: src/mapping/src/kdTree.cpp.s
@@ -1153,8 +1057,7 @@ src/mapping/src/kdTree.s: src/mapping/src/kdTree.cpp.s
 
 # target to generate assembly for a file
 src/mapping/src/kdTree.cpp.s:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/mapping/src/kdTree.cpp.s
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/mapping/src/kdTree.cpp.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mapping/src/kdTree.cpp.s
 .PHONY : src/mapping/src/kdTree.cpp.s
 
 src/mapping/src/mapping.o: src/mapping/src/mapping.cpp.o
@@ -1163,8 +1066,7 @@ src/mapping/src/mapping.o: src/mapping/src/mapping.cpp.o
 
 # target to build an object file
 src/mapping/src/mapping.cpp.o:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/mapping/src/mapping.cpp.o
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/mapping/src/mapping.cpp.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mapping/src/mapping.cpp.o
 .PHONY : src/mapping/src/mapping.cpp.o
 
 src/mapping/src/mapping.i: src/mapping/src/mapping.cpp.i
@@ -1173,8 +1075,7 @@ src/mapping/src/mapping.i: src/mapping/src/mapping.cpp.i
 
 # target to preprocess a source file
 src/mapping/src/mapping.cpp.i:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/mapping/src/mapping.cpp.i
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/mapping/src/mapping.cpp.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mapping/src/mapping.cpp.i
 .PHONY : src/mapping/src/mapping.cpp.i
 
 src/mapping/src/mapping.s: src/mapping/src/mapping.cpp.s
@@ -1183,8 +1084,7 @@ src/mapping/src/mapping.s: src/mapping/src/mapping.cpp.s
 
 # target to generate assembly for a file
 src/mapping/src/mapping.cpp.s:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/mapping/src/mapping.cpp.s
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/mapping/src/mapping.cpp.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/mapping/src/mapping.cpp.s
 .PHONY : src/mapping/src/mapping.cpp.s
 
 src/minimap/src/minimap.o: src/minimap/src/minimap.cpp.o
@@ -1193,8 +1093,7 @@ src/minimap/src/minimap.o: src/minimap/src/minimap.cpp.o
 
 # target to build an object file
 src/minimap/src/minimap.cpp.o:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/minimap/src/minimap.cpp.o
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/minimap/src/minimap.cpp.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/minimap/src/minimap.cpp.o
 .PHONY : src/minimap/src/minimap.cpp.o
 
 src/minimap/src/minimap.i: src/minimap/src/minimap.cpp.i
@@ -1203,8 +1102,7 @@ src/minimap/src/minimap.i: src/minimap/src/minimap.cpp.i
 
 # target to preprocess a source file
 src/minimap/src/minimap.cpp.i:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/minimap/src/minimap.cpp.i
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/minimap/src/minimap.cpp.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/minimap/src/minimap.cpp.i
 .PHONY : src/minimap/src/minimap.cpp.i
 
 src/minimap/src/minimap.s: src/minimap/src/minimap.cpp.s
@@ -1213,8 +1111,7 @@ src/minimap/src/minimap.s: src/minimap/src/minimap.cpp.s
 
 # target to generate assembly for a file
 src/minimap/src/minimap.cpp.s:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/minimap/src/minimap.cpp.s
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/minimap/src/minimap.cpp.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/minimap/src/minimap.cpp.s
 .PHONY : src/minimap/src/minimap.cpp.s
 
 src/others/src/camera/cam_wrapper.o: src/others/src/camera/cam_wrapper.cpp.o
@@ -1223,8 +1120,7 @@ src/others/src/camera/cam_wrapper.o: src/others/src/camera/cam_wrapper.cpp.o
 
 # target to build an object file
 src/others/src/camera/cam_wrapper.cpp.o:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/others/src/camera/cam_wrapper.cpp.o
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/others/src/camera/cam_wrapper.cpp.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/others/src/camera/cam_wrapper.cpp.o
 .PHONY : src/others/src/camera/cam_wrapper.cpp.o
 
 src/others/src/camera/cam_wrapper.i: src/others/src/camera/cam_wrapper.cpp.i
@@ -1233,8 +1129,7 @@ src/others/src/camera/cam_wrapper.i: src/others/src/camera/cam_wrapper.cpp.i
 
 # target to preprocess a source file
 src/others/src/camera/cam_wrapper.cpp.i:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/others/src/camera/cam_wrapper.cpp.i
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/others/src/camera/cam_wrapper.cpp.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/others/src/camera/cam_wrapper.cpp.i
 .PHONY : src/others/src/camera/cam_wrapper.cpp.i
 
 src/others/src/camera/cam_wrapper.s: src/others/src/camera/cam_wrapper.cpp.s
@@ -1243,8 +1138,7 @@ src/others/src/camera/cam_wrapper.s: src/others/src/camera/cam_wrapper.cpp.s
 
 # target to generate assembly for a file
 src/others/src/camera/cam_wrapper.cpp.s:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/others/src/camera/cam_wrapper.cpp.s
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/others/src/camera/cam_wrapper.cpp.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/others/src/camera/cam_wrapper.cpp.s
 .PHONY : src/others/src/camera/cam_wrapper.cpp.s
 
 src/others/src/camera/video_wrapper.o: src/others/src/camera/video_wrapper.cpp.o
@@ -1253,8 +1147,7 @@ src/others/src/camera/video_wrapper.o: src/others/src/camera/video_wrapper.cpp.o
 
 # target to build an object file
 src/others/src/camera/video_wrapper.cpp.o:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/others/src/camera/video_wrapper.cpp.o
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/others/src/camera/video_wrapper.cpp.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/others/src/camera/video_wrapper.cpp.o
 .PHONY : src/others/src/camera/video_wrapper.cpp.o
 
 src/others/src/camera/video_wrapper.i: src/others/src/camera/video_wrapper.cpp.i
@@ -1263,8 +1156,7 @@ src/others/src/camera/video_wrapper.i: src/others/src/camera/video_wrapper.cpp.i
 
 # target to preprocess a source file
 src/others/src/camera/video_wrapper.cpp.i:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/others/src/camera/video_wrapper.cpp.i
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/others/src/camera/video_wrapper.cpp.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/others/src/camera/video_wrapper.cpp.i
 .PHONY : src/others/src/camera/video_wrapper.cpp.i
 
 src/others/src/camera/video_wrapper.s: src/others/src/camera/video_wrapper.cpp.s
@@ -1273,8 +1165,7 @@ src/others/src/camera/video_wrapper.s: src/others/src/camera/video_wrapper.cpp.s
 
 # target to generate assembly for a file
 src/others/src/camera/video_wrapper.cpp.s:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/others/src/camera/video_wrapper.cpp.s
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/others/src/camera/video_wrapper.cpp.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/others/src/camera/video_wrapper.cpp.s
 .PHONY : src/others/src/camera/video_wrapper.cpp.s
 
 src/others/src/lib_json/json_reader.o: src/others/src/lib_json/json_reader.cpp.o
@@ -1283,8 +1174,7 @@ src/others/src/lib_json/json_reader.o: src/others/src/lib_json/json_reader.cpp.o
 
 # target to build an object file
 src/others/src/lib_json/json_reader.cpp.o:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/others/src/lib_json/json_reader.cpp.o
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/others/src/lib_json/json_reader.cpp.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/others/src/lib_json/json_reader.cpp.o
 .PHONY : src/others/src/lib_json/json_reader.cpp.o
 
 src/others/src/lib_json/json_reader.i: src/others/src/lib_json/json_reader.cpp.i
@@ -1293,8 +1183,7 @@ src/others/src/lib_json/json_reader.i: src/others/src/lib_json/json_reader.cpp.i
 
 # target to preprocess a source file
 src/others/src/lib_json/json_reader.cpp.i:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/others/src/lib_json/json_reader.cpp.i
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/others/src/lib_json/json_reader.cpp.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/others/src/lib_json/json_reader.cpp.i
 .PHONY : src/others/src/lib_json/json_reader.cpp.i
 
 src/others/src/lib_json/json_reader.s: src/others/src/lib_json/json_reader.cpp.s
@@ -1303,8 +1192,7 @@ src/others/src/lib_json/json_reader.s: src/others/src/lib_json/json_reader.cpp.s
 
 # target to generate assembly for a file
 src/others/src/lib_json/json_reader.cpp.s:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/others/src/lib_json/json_reader.cpp.s
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/others/src/lib_json/json_reader.cpp.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/others/src/lib_json/json_reader.cpp.s
 .PHONY : src/others/src/lib_json/json_reader.cpp.s
 
 src/others/src/lib_json/json_value.o: src/others/src/lib_json/json_value.cpp.o
@@ -1313,8 +1201,7 @@ src/others/src/lib_json/json_value.o: src/others/src/lib_json/json_value.cpp.o
 
 # target to build an object file
 src/others/src/lib_json/json_value.cpp.o:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/others/src/lib_json/json_value.cpp.o
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/others/src/lib_json/json_value.cpp.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/others/src/lib_json/json_value.cpp.o
 .PHONY : src/others/src/lib_json/json_value.cpp.o
 
 src/others/src/lib_json/json_value.i: src/others/src/lib_json/json_value.cpp.i
@@ -1323,8 +1210,7 @@ src/others/src/lib_json/json_value.i: src/others/src/lib_json/json_value.cpp.i
 
 # target to preprocess a source file
 src/others/src/lib_json/json_value.cpp.i:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/others/src/lib_json/json_value.cpp.i
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/others/src/lib_json/json_value.cpp.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/others/src/lib_json/json_value.cpp.i
 .PHONY : src/others/src/lib_json/json_value.cpp.i
 
 src/others/src/lib_json/json_value.s: src/others/src/lib_json/json_value.cpp.s
@@ -1333,8 +1219,7 @@ src/others/src/lib_json/json_value.s: src/others/src/lib_json/json_value.cpp.s
 
 # target to generate assembly for a file
 src/others/src/lib_json/json_value.cpp.s:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/others/src/lib_json/json_value.cpp.s
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/others/src/lib_json/json_value.cpp.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/others/src/lib_json/json_value.cpp.s
 .PHONY : src/others/src/lib_json/json_value.cpp.s
 
 src/others/src/lib_json/json_writer.o: src/others/src/lib_json/json_writer.cpp.o
@@ -1343,8 +1228,7 @@ src/others/src/lib_json/json_writer.o: src/others/src/lib_json/json_writer.cpp.o
 
 # target to build an object file
 src/others/src/lib_json/json_writer.cpp.o:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/others/src/lib_json/json_writer.cpp.o
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/others/src/lib_json/json_writer.cpp.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/others/src/lib_json/json_writer.cpp.o
 .PHONY : src/others/src/lib_json/json_writer.cpp.o
 
 src/others/src/lib_json/json_writer.i: src/others/src/lib_json/json_writer.cpp.i
@@ -1353,8 +1237,7 @@ src/others/src/lib_json/json_writer.i: src/others/src/lib_json/json_writer.cpp.i
 
 # target to preprocess a source file
 src/others/src/lib_json/json_writer.cpp.i:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/others/src/lib_json/json_writer.cpp.i
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/others/src/lib_json/json_writer.cpp.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/others/src/lib_json/json_writer.cpp.i
 .PHONY : src/others/src/lib_json/json_writer.cpp.i
 
 src/others/src/lib_json/json_writer.s: src/others/src/lib_json/json_writer.cpp.s
@@ -1363,8 +1246,7 @@ src/others/src/lib_json/json_writer.s: src/others/src/lib_json/json_writer.cpp.s
 
 # target to generate assembly for a file
 src/others/src/lib_json/json_writer.cpp.s:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/others/src/lib_json/json_writer.cpp.s
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/others/src/lib_json/json_writer.cpp.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/others/src/lib_json/json_writer.cpp.s
 .PHONY : src/others/src/lib_json/json_writer.cpp.s
 
 src/others/src/rmutils.o: src/others/src/rmutils.cpp.o
@@ -1373,8 +1255,7 @@ src/others/src/rmutils.o: src/others/src/rmutils.cpp.o
 
 # target to build an object file
 src/others/src/rmutils.cpp.o:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/others/src/rmutils.cpp.o
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/others/src/rmutils.cpp.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/others/src/rmutils.cpp.o
 .PHONY : src/others/src/rmutils.cpp.o
 
 src/others/src/rmutils.i: src/others/src/rmutils.cpp.i
@@ -1383,8 +1264,7 @@ src/others/src/rmutils.i: src/others/src/rmutils.cpp.i
 
 # target to preprocess a source file
 src/others/src/rmutils.cpp.i:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/others/src/rmutils.cpp.i
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/others/src/rmutils.cpp.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/others/src/rmutils.cpp.i
 .PHONY : src/others/src/rmutils.cpp.i
 
 src/others/src/rmutils.s: src/others/src/rmutils.cpp.s
@@ -1393,8 +1273,7 @@ src/others/src/rmutils.s: src/others/src/rmutils.cpp.s
 
 # target to generate assembly for a file
 src/others/src/rmutils.cpp.s:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/others/src/rmutils.cpp.s
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/others/src/rmutils.cpp.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/others/src/rmutils.cpp.s
 .PHONY : src/others/src/rmutils.cpp.s
 
 src/rmcamera/src/rmcamera.o: src/rmcamera/src/rmcamera.cpp.o
@@ -1403,8 +1282,7 @@ src/rmcamera/src/rmcamera.o: src/rmcamera/src/rmcamera.cpp.o
 
 # target to build an object file
 src/rmcamera/src/rmcamera.cpp.o:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/rmcamera/src/rmcamera.cpp.o
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/rmcamera/src/rmcamera.cpp.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/rmcamera/src/rmcamera.cpp.o
 .PHONY : src/rmcamera/src/rmcamera.cpp.o
 
 src/rmcamera/src/rmcamera.i: src/rmcamera/src/rmcamera.cpp.i
@@ -1413,8 +1291,7 @@ src/rmcamera/src/rmcamera.i: src/rmcamera/src/rmcamera.cpp.i
 
 # target to preprocess a source file
 src/rmcamera/src/rmcamera.cpp.i:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/rmcamera/src/rmcamera.cpp.i
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/rmcamera/src/rmcamera.cpp.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/rmcamera/src/rmcamera.cpp.i
 .PHONY : src/rmcamera/src/rmcamera.cpp.i
 
 src/rmcamera/src/rmcamera.s: src/rmcamera/src/rmcamera.cpp.s
@@ -1423,8 +1300,7 @@ src/rmcamera/src/rmcamera.s: src/rmcamera/src/rmcamera.cpp.s
 
 # target to generate assembly for a file
 src/rmcamera/src/rmcamera.cpp.s:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/rmcamera/src/rmcamera.cpp.s
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/rmcamera/src/rmcamera.cpp.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/rmcamera/src/rmcamera.cpp.s
 .PHONY : src/rmcamera/src/rmcamera.cpp.s
 
 src/rmconfig/src/rmconfig.o: src/rmconfig/src/rmconfig.cpp.o
@@ -1433,8 +1309,7 @@ src/rmconfig/src/rmconfig.o: src/rmconfig/src/rmconfig.cpp.o
 
 # target to build an object file
 src/rmconfig/src/rmconfig.cpp.o:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/rmconfig/src/rmconfig.cpp.o
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/rmconfig/src/rmconfig.cpp.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/rmconfig/src/rmconfig.cpp.o
 .PHONY : src/rmconfig/src/rmconfig.cpp.o
 
 src/rmconfig/src/rmconfig.i: src/rmconfig/src/rmconfig.cpp.i
@@ -1443,8 +1318,7 @@ src/rmconfig/src/rmconfig.i: src/rmconfig/src/rmconfig.cpp.i
 
 # target to preprocess a source file
 src/rmconfig/src/rmconfig.cpp.i:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/rmconfig/src/rmconfig.cpp.i
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/rmconfig/src/rmconfig.cpp.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/rmconfig/src/rmconfig.cpp.i
 .PHONY : src/rmconfig/src/rmconfig.cpp.i
 
 src/rmconfig/src/rmconfig.s: src/rmconfig/src/rmconfig.cpp.s
@@ -1453,8 +1327,7 @@ src/rmconfig/src/rmconfig.s: src/rmconfig/src/rmconfig.cpp.s
 
 # target to generate assembly for a file
 src/rmconfig/src/rmconfig.cpp.s:
-	$(MAKE) -f CMakeFiles/camera-test.dir/build.make CMakeFiles/camera-test.dir/src/rmconfig/src/rmconfig.cpp.s
-	$(MAKE) -f CMakeFiles/radar_pnp.dir/build.make CMakeFiles/radar_pnp.dir/src/rmconfig/src/rmconfig.cpp.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/rmconfig/src/rmconfig.cpp.s
 .PHONY : src/rmconfig/src/rmconfig.cpp.s
 
 # Help Target
@@ -1466,14 +1339,11 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... package_source"
-	@echo "... camera-test"
 	@echo "... edit_cache"
 	@echo "... NightlyMemCheck"
-	@echo "... NightlyTest"
 	@echo "... ContinuousConfigure"
 	@echo "... ContinuousBuild"
 	@echo "... NightlyConfigure"
-	@echo "... radar_pnp"
 	@echo "... NightlyMemoryCheck"
 	@echo "... ExperimentalTest"
 	@echo "... ContinuousUpdate"
@@ -1484,6 +1354,8 @@ help:
 	@echo "... ContinuousCoverage"
 	@echo "... ExperimentalConfigure"
 	@echo "... Continuous"
+	@echo "... NightlyTest"
+	@echo "... main"
 	@echo "... Nightly"
 	@echo "... NightlySubmit"
 	@echo "... NightlyStart"
@@ -1498,12 +1370,9 @@ help:
 	@echo "... ContinuousMemCheck"
 	@echo "... ContinuousTest"
 	@echo "... ContinuousSubmit"
-	@echo "... programs/pnp_test.o"
-	@echo "... programs/pnp_test.i"
-	@echo "... programs/pnp_test.s"
-	@echo "... programs/radar_camera-test.o"
-	@echo "... programs/radar_camera-test.i"
-	@echo "... programs/radar_camera-test.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 	@echo "... src/armor/src/armor_finder/armor_box/armor_box.o"
 	@echo "... src/armor/src/armor_finder/armor_box/armor_box.i"
 	@echo "... src/armor/src/armor_finder/armor_box/armor_box.s"

@@ -1,14 +1,11 @@
 /home/hoshino/CLionProjects/radarpnp/build/CMakeFiles/rebuild_cache.dir
 /home/hoshino/CLionProjects/radarpnp/build/CMakeFiles/test.dir
 /home/hoshino/CLionProjects/radarpnp/build/CMakeFiles/package_source.dir
-/home/hoshino/CLionProjects/radarpnp/build/CMakeFiles/camera-test.dir
 /home/hoshino/CLionProjects/radarpnp/build/CMakeFiles/edit_cache.dir
 /home/hoshino/CLionProjects/radarpnp/build/CMakeFiles/NightlyMemCheck.dir
-/home/hoshino/CLionProjects/radarpnp/build/CMakeFiles/NightlyTest.dir
 /home/hoshino/CLionProjects/radarpnp/build/CMakeFiles/ContinuousConfigure.dir
 /home/hoshino/CLionProjects/radarpnp/build/CMakeFiles/ContinuousBuild.dir
 /home/hoshino/CLionProjects/radarpnp/build/CMakeFiles/NightlyConfigure.dir
-/home/hoshino/CLionProjects/radarpnp/build/CMakeFiles/radar_pnp.dir
 /home/hoshino/CLionProjects/radarpnp/build/CMakeFiles/NightlyMemoryCheck.dir
 /home/hoshino/CLionProjects/radarpnp/build/CMakeFiles/ExperimentalTest.dir
 /home/hoshino/CLionProjects/radarpnp/build/CMakeFiles/ContinuousUpdate.dir
@@ -19,6 +16,8 @@
 /home/hoshino/CLionProjects/radarpnp/build/CMakeFiles/ContinuousCoverage.dir
 /home/hoshino/CLionProjects/radarpnp/build/CMakeFiles/ExperimentalConfigure.dir
 /home/hoshino/CLionProjects/radarpnp/build/CMakeFiles/Continuous.dir
+/home/hoshino/CLionProjects/radarpnp/build/CMakeFiles/NightlyTest.dir
+/home/hoshino/CLionProjects/radarpnp/build/CMakeFiles/main.dir
 /home/hoshino/CLionProjects/radarpnp/build/CMakeFiles/Nightly.dir
 /home/hoshino/CLionProjects/radarpnp/build/CMakeFiles/NightlySubmit.dir
 /home/hoshino/CLionProjects/radarpnp/build/CMakeFiles/NightlyStart.dir

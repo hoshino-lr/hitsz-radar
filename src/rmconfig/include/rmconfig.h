@@ -68,8 +68,8 @@ public:
     int IMAGE_CENTER_X = 320;
     int IMAGE_CENTER_Y = 320;
     //Camera
-    camera camConfig1 = camera(1084.32,1084.05,339.53,231.71,-0.0876,0.32596,-0.08626,-0.002323,0.001002,0,-45,0,5,0);
-    camera camConfig2 = camera(1084.32,1084.05,339.53,231.71,-0.0876,0.32596,-0.08626,-0.002323,0.001002,30,-15,0,5,0);
+    camera camConfig1 = camera(1084.32,1084.05,339.53,231.71,-0.0876,0.32596,-0.08626,-0.002323,0.001002,0,-45,0,5,0,"NULL");
+    camera camConfig2 = camera(1084.32,1084.05,339.53,231.71,-0.0876,0.32596,-0.08626,-0.002323,0.001002,30,-15,0,5,0,"NULL");
     std::vector<cv::Rect> camroi_1 = {cv::Rect(100,100,100,100),cv::Rect(200,200,100,100)};
     std::vector<cv::Rect> camroi_2 = {cv::Rect(100,100,100,100),cv::Rect(200,200,100,100)};
   void init_from_file() {
@@ -125,6 +125,7 @@ public:
       ENEMY_COLOR = data["ENEMY_COLOR"].asInt();
     // camera
     Json::Value camera = root["camera"];
+    camConfig1.camera_sn = camera["sn_1"].asString();
     camConfig1.fx = camera["fx_1"].asDouble();
     camConfig1.fy = camera["fy_1"].asDouble();
     camConfig1.cx = camera["cx_1"].asDouble();
@@ -144,6 +145,7 @@ public:
     camConfig1.coordinate_x = camera["camera1_x"].asInt();
     camConfig1.coordinate_y = camera["camera1_y"].asInt();
     camConfig1.init();
+    camConfig2.camera_sn = camera["sn_2"].asString();
     camConfig2.fx = camera["fx_2"].asDouble();
     camConfig2.fy = camera["fy_2"].asDouble();
     camConfig2.cx = camera["cx_2"].asDouble();
@@ -209,6 +211,7 @@ public:
 
       // camera
     Json::Value camera;
+    camera["sn_1"] = camConfig1.camera_sn;
     camera["fx_1"] = camConfig1.fx;
     camera["fy_1"] = camConfig1.fy;
     camera["cx_1"] = camConfig1.cx;
@@ -227,6 +230,7 @@ public:
     camera["camera1_roll"] = camConfig1.roll;
     camera["camera1_x"] = camConfig1.coordinate_x;
     camera["camera1_y"] = camConfig1.coordinate_y;
+    camera["sn_2"] = camConfig2.camera_sn;
     camera["fx_2"] = camConfig2.fx;
     camera["fy_2"] = camConfig2.fy;
     camera["cx_2"] = camConfig2.cx;

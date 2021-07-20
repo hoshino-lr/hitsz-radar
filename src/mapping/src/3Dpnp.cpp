@@ -18,7 +18,7 @@
 #include <opencv2/core/eigen.hpp>
 cv::Point2d Radarpnp::radar_rotate(cv::Mat &Tvec,rm::config::camera& camera_) const {
     cv::Point2d ans;
-    Eigen::Vector3d euler_angle( -105.0/ 180 * CV_PI, 0, 30.0/ 180 * CV_PI);
+    Eigen::Vector3d euler_angle( (camera_.pitch-90.0)/ 180 * CV_PI, 0, (double)camera_.yaw/ 180 * CV_PI);
     // 使用Eigen库将欧拉角转换为旋转矩阵
     Eigen::Matrix3d rotation_matrix1;
     rotation_matrix1 = Eigen::AngleAxisd(euler_angle[2], Eigen::Vector3d::UnitZ()) *
@@ -28,9 +28,7 @@ cv::Point2d Radarpnp::radar_rotate(cv::Mat &Tvec,rm::config::camera& camera_) co
     cv::cv2eigen(Tvec, T_n);
     Eigen::Vector3d P_OC;
     P_OC = rotation_matrix1*T_n;
-    std::cout << P_OC << std::endl;
-    std::cout << Tvec.at<double>(0,0) << std::endl;
-    std::cout <<  Tvec.at<double>(0,2) << std::endl;
+    LOG(INFO) <<"the armor place" <<P_OC ;
     ans.y = (P_OC(0)/1000+ camera_.coordinate_x) / this->arena_w  * this->picture_h;//宽度
     ans.x = (P_OC(1)/1000 + camera_.coordinate_y) / this->arena_l * this->picture_w;//长度
     return ans;
@@ -125,9 +123,18 @@ cv::Point2d Radarpnp::radar_rotate(cv::Mat &Tvec,rm::config::camera& camera_) co
 //    return true;
 //}
 
-cv::Point2d Radarpnp::radar_solvePnp(cv::Rect2d &aim_coordinate_camara,rm::config::camera& camera_) const {
-    static double x = 140 / 2.0 * 1.2;
-    static double y = 125 / 2.0 * 1.1;
+cv::Point2d Radarpnp::radar_solvePnp(cv::Rect2d &aim_coordinate_camara,int id) const {
+    static double x = 170 / 2.0 ;
+    static double y = 125 / 2.0 ;
+    rm::config::camera  camera_= this->camera_1;
+    if(id==1)
+    {
+      camera_ = this->camera_1;
+    }
+    else{
+      camera_ = this->camera_2;
+    }
+
     //装甲板世界坐标，从开始逆时针 4 点。
     static std::vector<cv::Point3f> world_points = {cv::Point3f(-x, -y, 0),
                                                     cv::Point3f(x, -y, 0),

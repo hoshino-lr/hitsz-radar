@@ -17,7 +17,7 @@
 #define BLOB_BLUE 0
 #define BOX_RED 1
 #define BOX_BLUE 0
-
+void point_dl(std::vector<cv::Point2d> boxes1,std::vector<cv::Point2d> boxes2,cv::Mat map);
 extern std::map<int, std::string> id2name;  //装甲板id到名称的map
 extern std::map<std::string, int> name2id;  //装甲板名称到id的map
 extern std::map<std::string, int> prior_blue;
@@ -30,9 +30,9 @@ typedef struct
 /********************* 自瞄类定义 **********************/
 class ArmorFinder {
    public:
-    explicit ArmorFinder(const int &color);
+    explicit ArmorFinder(const int &color,const int &Id);
     ~ArmorFinder() = default;
-    std::vector<ArmorBox> target_box = std::vector<ArmorBox>(4,ArmorBox());
+    std::vector<ArmorBox> target_box = std::vector<ArmorBox>(2,ArmorBox());
 private:
     typedef enum {
         SEARCHING_STATE,
@@ -40,6 +40,7 @@ private:
         STANDBY_STATE
     } State;  // 自瞄状态枚举定义
     Radarpnp radar_pnp;
+    int id;
     std::vector<cv::Rect> roi =  std::vector<cv::Rect>(2,cv::Rect());
     double frame_time{};       // 当前帧对应时间
     const int &enemy_color;  // 敌方颜色，引用外部变量，自动变化
@@ -55,7 +56,7 @@ private:
     std::vector<cv::Point2d> wave_fliter(std::vector<cv::Point2d> now_points);
     cv::Point2d get_average(int num);
    public:
-    void run(cv::Mat &src,cv::Mat & map);  // 自瞄主函数
+    std::vector<cv::Point2d> run(cv::Mat &src,cv::Mat & map);  // 自瞄主函数
     float getPointLength(cv::Point_<float> point);
 };
 

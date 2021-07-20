@@ -38,7 +38,17 @@ void showArmorBoxes(std::string windows_name, const cv::Mat &src,
     } else if (src.type() == CV_8UC3) {  // RGB 彩色
         image2show = src.clone();
     }
-    for (auto &box : armor_boxes) {
+    float fGamma = 1/2.2;
+  MatIterator_<Vec3b> it, end;
+  for( it = image2show.begin<Vec3b>(), end = image2show.end<Vec3b>(); it != end; it++ )
+  {
+    (*it)[0] = pow((float)(((*it)[0])/255.0), fGamma) * 255.0;
+    (*it)[1] = pow((float)(((*it)[1])/255.0), fGamma) * 255.0;
+    (*it)[2] = pow((float)(((*it)[2])/255.0), fGamma) * 255.0;
+  }
+
+
+  for (auto &box : armor_boxes) {
         if (box.box_color == BOX_BLUE) {
             rectangle(image2show, box.rect, Scalar(0, 255, 0), 1);
             drawLightBlobs(image2show, box.light_blobs);
@@ -148,7 +158,7 @@ void showTrackSearchingPos(std::string window_names, const cv::Mat &src,
     imshow(window_names, image2show);
 }
 
-void show_pnp(std::string window_names,const cv::Mat &src,const std::vector<cv::Point2d>& pos)
+void show_pnp(std::string window_names,const cv::Mat &src,std::vector<cv::Point2d>& pos)
 {
   static Mat image2show;
   if (src.type() == CV_8UC1) {  // 黑白图像
@@ -160,8 +170,18 @@ void show_pnp(std::string window_names,const cv::Mat &src,const std::vector<cv::
   {
     if (i!=cv::Point2d(0,0))
     {
-      circle(image2show, i,10, Scalar(0, 255, 0), -1);
+      if (!config->ENEMY_COLOR)
+      {
+        circle(image2show, i,10, Scalar(0, 255, 0), -1);
+      }
+      else
+      {
+        i.x = 1225-i.x;
+        i.y = 658-i.y;
+        circle(image2show, i,10, Scalar(0, 255, 0), -1);
+      }
     }
   }
+  cv::resize(image2show,image2show,cv::Size(600,300));
   imshow(window_names, image2show);
 }

@@ -69,13 +69,10 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/camera-test.dir/DependInfo.cmake"
   "CMakeFiles/NightlyMemCheck.dir/DependInfo.cmake"
-  "CMakeFiles/NightlyTest.dir/DependInfo.cmake"
   "CMakeFiles/ContinuousConfigure.dir/DependInfo.cmake"
   "CMakeFiles/ContinuousBuild.dir/DependInfo.cmake"
   "CMakeFiles/NightlyConfigure.dir/DependInfo.cmake"
-  "CMakeFiles/radar_pnp.dir/DependInfo.cmake"
   "CMakeFiles/NightlyMemoryCheck.dir/DependInfo.cmake"
   "CMakeFiles/ExperimentalTest.dir/DependInfo.cmake"
   "CMakeFiles/ContinuousUpdate.dir/DependInfo.cmake"
@@ -86,6 +83,8 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/ContinuousCoverage.dir/DependInfo.cmake"
   "CMakeFiles/ExperimentalConfigure.dir/DependInfo.cmake"
   "CMakeFiles/Continuous.dir/DependInfo.cmake"
+  "CMakeFiles/NightlyTest.dir/DependInfo.cmake"
+  "CMakeFiles/main.dir/DependInfo.cmake"
   "CMakeFiles/Nightly.dir/DependInfo.cmake"
   "CMakeFiles/NightlySubmit.dir/DependInfo.cmake"
   "CMakeFiles/NightlyStart.dir/DependInfo.cmake"

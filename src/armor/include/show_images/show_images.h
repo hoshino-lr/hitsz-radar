@@ -14,5 +14,5 @@ void showArmorBox(std::string windows_name, const cv::Mat &src, const std::vecto
 void showLightBlobs(std::string windows_name, const cv::Mat &src, const LightBlobs &light_blobs);
 void showArmorBoxesClass(std::string window_names, const cv::Mat &src, const ArmorBoxes &boxes);
 void showTrackSearchingPos(std::string window_names, const cv::Mat &src, const cv::Rect2d pos);
-void show_pnp(std::string window_names,const cv::Mat &src,const std::vector<cv::Point2d> &pos);
+void show_pnp(std::string window_names,const cv::Mat &src,std::vector<cv::Point2d> &pos);
 #endif /* _SHOW_IMAGES_H_ */

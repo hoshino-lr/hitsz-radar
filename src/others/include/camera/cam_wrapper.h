@@ -65,7 +65,7 @@ class Camera : public WrapperHead {
 
 private:
   std::string sn;
-  int index;
+
   int exposure, gain;
   GX_STATUS status;
 
@@ -97,6 +97,7 @@ public:
 //  void calcRoi(); //autmatic resize parameters
   bool init_is_successful();                    // return video is available or not
   bool read(cv::Mat &src) final;
+  int index;
 };
 
 #endif //RM2020_CAM_DRIVER_CAMWRAPPER_H

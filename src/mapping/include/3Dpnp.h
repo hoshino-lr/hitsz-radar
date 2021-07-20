@@ -17,7 +17,7 @@ public:
     const int arena_w = 15; //宽 15m
     rm::config::camera camera_1;
     rm::config::camera camera_2;
-    cv::Point2d radar_solvePnp(cv::Rect2d &aim_coordinate_camara,rm::config::camera& camera_) const;
+    cv::Point2d radar_solvePnp(cv::Rect2d &aim_coordinate_camara,int id) const;
     cv::Point2d radar_rotate(cv::Mat &Tvec,rm::config::camera& camera_) const;
     Radarpnp(const rm::config::camera camera1,const rm::config::camera camera2):
     camera_1(camera1),camera_2(camera2)

@@ -7,11 +7,12 @@
 
 #include <cstdint>
 #include <opencv2/opencv.hpp>
-
+#include <cstring>
 namespace rm {
 namespace config {
 class camera {
 public:
+  std::string camera_sn;
   double fx;
   double fy;
   double cx;
@@ -32,8 +33,9 @@ public:
   int coordinate_x;
   int coordinate_y;
   cv::Mat mtx, dist, mapx, mapy;
-  camera(double f_x,double f_y,double c_x,double c_y,double k_1,double k_2,double k_3,double p_1,double p_2,int Yaw,int Pitch,int Roll,int x, int y):
-    fx(f_x),fy(f_y),cx(c_x),cy(c_y),k1(k_1),k2(k_2),k3(k_3),p1(p_1),p2(p_2),yaw(Yaw),pitch(Pitch),roll(Roll)
+  camera(double f_x,double f_y,double c_x,double c_y,
+  double k_1,double k_2,double k_3,double p_1,double p_2,int Yaw,int Pitch,int Roll,int x, int y,std::string sn):
+    fx(f_x),fy(f_y),cx(c_x),cy(c_y),k1(k_1),k2(k_2),k3(k_3),p1(p_1),p2(p_2),yaw(Yaw),pitch(Pitch),roll(Roll),camera_sn(sn)
   ,coordinate_x(x)
   ,coordinate_y(y)
     {}

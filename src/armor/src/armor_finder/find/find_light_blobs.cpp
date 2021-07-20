@@ -81,8 +81,6 @@ bool ArmorFinder::findLightBlobs(const cv::Mat &src, LightBlobs &light_blobs) {
         cv::inRange(color_hsv,cv::Scalar(78,120,120),cv::Scalar(99,255,255),color_channel);
     } else if (enemy_color == ENEMY_RED) {    /*                      */
         color_channel = channels[2];        /************************/
-      cv::cvtColor(src,color_hsv,cv::COLOR_BGR2HSV);
-      cv::inRange(color_hsv,cv::Scalar(78,120,120),cv::Scalar(99,255,255),color_channel);
     }
     int light_threshold;
     if(enemy_color == ENEMY_BLUE){

@@ -128,6 +128,7 @@ CMakeFiles/camera-test.dir/src/armor/src/armor_finder/armor_box/armor_box.cpp.o
  ../src/armor/include/armor_finder/armor_finder.h
  ../src/armor/include/armor_finder/light_blobs.h
  ../src/mapping/include/3Dpnp.h
+ ../src/others/include/RoundQueue.h
  ../src/others/include/camera/DxImageProc.h
  ../src/others/include/camera/GxIAPI.h
  ../src/others/include/camera/cam_wrapper.h
@@ -260,6 +261,7 @@ CMakeFiles/camera-test.dir/src/armor/src/armor_finder/armor_finder.cpp.o
  ../src/armor/include/armor_finder/light_blobs.h
  ../src/armor/include/show_images/show_images.h
  ../src/mapping/include/3Dpnp.h
+ ../src/others/include/RoundQueue.h
  ../src/others/include/camera/DxImageProc.h
  ../src/others/include/camera/GxIAPI.h
  ../src/others/include/camera/cam_wrapper.h
@@ -392,6 +394,7 @@ CMakeFiles/camera-test.dir/src/armor/src/armor_finder/find/find_armor_box.cpp.o
  ../src/armor/include/armor_finder/light_blobs.h
  ../src/armor/include/show_images/show_images.h
  ../src/mapping/include/3Dpnp.h
+ ../src/others/include/RoundQueue.h
  ../src/others/include/camera/DxImageProc.h
  ../src/others/include/camera/GxIAPI.h
  ../src/others/include/camera/cam_wrapper.h
@@ -523,6 +526,7 @@ CMakeFiles/camera-test.dir/src/armor/src/armor_finder/find/find_light_blobs.cpp.
  ../src/armor/include/armor_finder/armor_finder.h
  ../src/armor/include/armor_finder/light_blobs.h
  ../src/mapping/include/3Dpnp.h
+ ../src/others/include/RoundQueue.h
  ../src/others/include/camera/DxImageProc.h
  ../src/others/include/camera/GxIAPI.h
  ../src/others/include/camera/cam_wrapper.h
@@ -655,6 +659,7 @@ CMakeFiles/camera-test.dir/src/armor/src/armor_finder/searching_state/searching_
  ../src/armor/include/armor_finder/light_blobs.h
  ../src/armor/include/show_images/show_images.h
  ../src/mapping/include/3Dpnp.h
+ ../src/others/include/RoundQueue.h
  ../src/others/include/camera/DxImageProc.h
  ../src/others/include/camera/GxIAPI.h
  ../src/others/include/camera/cam_wrapper.h
@@ -786,6 +791,7 @@ CMakeFiles/camera-test.dir/src/armor/src/armor_finder/send_target/send_target.cp
  ../src/armor/include/armor_finder/armor_finder.h
  ../src/armor/include/armor_finder/light_blobs.h
  ../src/mapping/include/3Dpnp.h
+ ../src/others/include/RoundQueue.h
  ../src/others/include/camera/DxImageProc.h
  ../src/others/include/camera/GxIAPI.h
  ../src/others/include/camera/cam_wrapper.h
@@ -918,6 +924,7 @@ CMakeFiles/camera-test.dir/src/armor/src/show_images/show_images.cpp.o
  ../src/armor/include/armor_finder/light_blobs.h
  ../src/armor/include/show_images/show_images.h
  ../src/mapping/include/3Dpnp.h
+ ../src/others/include/RoundQueue.h
  ../src/others/include/camera/DxImageProc.h
  ../src/others/include/camera/GxIAPI.h
  ../src/others/include/camera/cam_wrapper.h

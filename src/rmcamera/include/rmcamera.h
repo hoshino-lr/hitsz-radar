@@ -43,7 +43,7 @@ static cv::VideoCapture cap;
   Camera *cam;
 
   bool open(rm::config::camera *camConfig, int camera_exposure, int camera_gain) {
-    cam = new Camera(1, reinterpret_cast<rm::config::camera *>(camConfig));
+    cam = new Camera(-1, reinterpret_cast<rm::config::camera *>(camConfig));
     cam->init();
     cam->setParam(camera_exposure, camera_gain);
     cam->start();
