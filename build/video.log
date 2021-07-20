@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "./radar_video.py", line 6, in <module>
+    ret1, frame1 = cap1.read()
+KeyboardInterrupt
