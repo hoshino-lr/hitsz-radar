@@ -54,6 +54,7 @@ public:
   void undistort(cv::Mat &frame) const {
     remap(frame, frame, mapx, mapy, cv::INTER_LINEAR);
   }
+
 };
 };
 };

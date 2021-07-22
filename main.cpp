@@ -18,11 +18,9 @@ auto* camera2 = new rm::camera;
 //运行时原图实例
 cv::Mat src1;
 cv::Mat src2;
+int state = 0;
 void loop();
-
 void init();
-
-
 int main(int argc, char **argv) {
   if (argc == 1) google::InitGoogleLogging(*argv);
   LOG(INFO) << "Welcome to radar!";
@@ -40,7 +38,14 @@ void window_init()
   cv::moveWindow("box2",640,0);
   cv::moveWindow("map",800,600);
 }
-
+static void OnClose() {
+  camera1->cam->stop();
+  camera2->cam->stop();
+  if (camera1 != NULL) delete camera1;
+  if (camera2 != NULL) delete camera2;
+  if (armor_finder_1 != NULL) delete armor_finder_1;
+  if (armor_finder_2 != NULL) delete armor_finder_2;
+}
 void init() {
   window_init();
   rmtime->init();
@@ -69,6 +74,7 @@ void loop() {
 
     while (camera1->is_open() or camera2->is_open())
     {
+      if(state==int('w')){ break;}
       if (camera1->is_open())
       {
         camera1->get_frame(src1);
@@ -89,6 +95,9 @@ void loop() {
         }
       }
       point_dl(boxes1,boxes2,map);
+      state = cv::waitKey(1);
     }
+    LOG(INFO) << "exiting...";
+    OnClose();    
   }
 }
