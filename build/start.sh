@@ -5,4 +5,4 @@ cd /home/${home_dir}/radar/build
 #sleep 45s
 echo ${pass_word}|sudo -S killall start_loop
 echo ${pass_word}|sudo -S killall main 
-echo ${pass_word}|sudo -S ./start_loop "./main"
+./start_loop "./main"

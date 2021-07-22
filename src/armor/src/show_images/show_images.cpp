@@ -182,6 +182,6 @@ void show_pnp(std::string window_names,const cv::Mat &src,std::vector<cv::Point2
       }
     }
   }
-  cv::resize(image2show,image2show,cv::Size(600,300));
+  cv::resize(image2show,image2show,cv::Size(1000,500));
   imshow(window_names, image2show);
 }

@@ -38,7 +38,7 @@ void window_init()
   cv::namedWindow("map");
   cv::moveWindow("box1",0,0);
   cv::moveWindow("box2",640,0);
-  cv::moveWindow("map",1280,480);
+  cv::moveWindow("map",800,600);
 }
 
 void init() {
@@ -65,7 +65,7 @@ void loop() {
   else
   {
     camera1->open(&config->camConfig1,config->ARMOR_CAMERA_EXPOSURE,config->ARMOR_CAMERA_GAIN);
-    camera2->open(&config->camConfig2,config->ARMOR_CAMERA_EXPOSURE,config->ARMOR_CAMERA_GAIN);
+    camera2->open(&config->camConfig2,config->ENERGY_CAMERA_EXPOSURE,config->ENERGY_CAMERA_GAIN);
 
     while (camera1->is_open() or camera2->is_open())
     {
