@@ -4,7 +4,7 @@
 using namespace std;
 
 int main(int argc,char* argv[]){
-   char* cmd = "./main";
+   char* cmd = "/home/hoshino/radar/build/main";
    int loop_cnt = -1;
    if(argc >= 2){
    	cmd = argv[1];

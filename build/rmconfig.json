@@ -38,10 +38,13 @@
 		"roi_width_1" :640,
 		"roi_width_2" : 640,
 		"sn_1" : "RS0039001020",
-		"sn_2" : "RT0070004017"
+		"sn_2" : "RT0070004017",
+		"sn_3" : "RS0038001020",
+		"sn_4" : "RS0037001020"
 	},
 	"config" : 
 	{
+		"run_mode": 1,
 		"camera_sn" : "NULL",
 		"ignore_types" : 
 		[
@@ -76,6 +79,6 @@
 		"ARMOR_CAMERA_GAIN" : 50,
 		"ENEMY_COLOR" : 0,
 		"ENERGY_CAMERA_EXPOSURE" : 6000,
-		"ENERGY_CAMERA_GAIN" : 200
+		"ENERGY_CAMERA_GAIN" : 300
 	}
 }

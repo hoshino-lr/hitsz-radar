@@ -4,8 +4,8 @@
 
 
 # Configuration directories and files
-SourceDirectory: /home/hoshino/CLionProjects/radarpnp
-BuildDirectory: /home/hoshino/CLionProjects/radarpnp/build
+SourceDirectory: /home/hoshino/radar
+BuildDirectory: /home/hoshino/radar/build
 
 # Where to place the cost data store
 CostDataFile: 
@@ -26,7 +26,7 @@ SubmitURL: http://
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/usr/bin/cmake" "/home/hoshino/CLionProjects/radarpnp"
+ConfigureCommand: "/usr/bin/cmake" "/home/hoshino/radar"
 MakeCommand: /usr/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}" -- -i
 DefaultCTestConfigurationType: Release
 

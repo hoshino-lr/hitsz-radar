@@ -292,13 +292,13 @@ rmcamera_config.h
 constants.h
 -
 
-/home/hoshino/CLionProjects/radarpnp/main.cpp
+/home/hoshino/radar/main.cpp
 glog/logging.h
 -
 opencv2/opencv.hpp
-/home/hoshino/CLionProjects/radarpnp/opencv2/opencv.hpp
+/home/hoshino/radar/opencv2/opencv.hpp
 armor_finder/armor_finder.h
-/home/hoshino/CLionProjects/radarpnp/armor_finder/armor_finder.h
+/home/hoshino/radar/armor_finder/armor_finder.h
 rmconfig.h
 -
 rmutils.h

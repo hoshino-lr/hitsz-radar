@@ -1,4 +1,3 @@
-Traceback (most recent call last):
-  File "./radar_video.py", line 12, in <module>
-    ret1, frame1 = cap1.read()
-KeyboardInterrupt
+[ WARN:0] global /tmp/pip-req-build-ms668fyv/opencv/modules/videoio/src/cap_v4l.cpp (1004) tryIoctl VIDEOIO(V4L2:/dev/video2): select() timeout.
+[ WARN:0] global /tmp/pip-req-build-ms668fyv/opencv/modules/videoio/src/cap_v4l.cpp (1004) tryIoctl VIDEOIO(V4L2:/dev/video2): select() timeout.
+[ WARN:0] global /tmp/pip-req-build-ms668fyv/opencv/modules/videoio/src/cap_v4l.cpp (1004) tryIoctl VIDEOIO(V4L2:/dev/video2): select() timeout.

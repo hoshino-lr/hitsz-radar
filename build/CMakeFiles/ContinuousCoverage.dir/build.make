@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hoshino/CLionProjects/radarpnp
+CMAKE_SOURCE_DIR = /home/hoshino/radar
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hoshino/CLionProjects/radarpnp/build
+CMAKE_BINARY_DIR = /home/hoshino/radar/build
 
 # Utility rule file for ContinuousCoverage.
 
@@ -71,6 +71,6 @@ CMakeFiles/ContinuousCoverage.dir/clean:
 .PHONY : CMakeFiles/ContinuousCoverage.dir/clean
 
 CMakeFiles/ContinuousCoverage.dir/depend:
-	cd /home/hoshino/CLionProjects/radarpnp/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hoshino/CLionProjects/radarpnp /home/hoshino/CLionProjects/radarpnp /home/hoshino/CLionProjects/radarpnp/build /home/hoshino/CLionProjects/radarpnp/build /home/hoshino/CLionProjects/radarpnp/build/CMakeFiles/ContinuousCoverage.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/hoshino/radar/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hoshino/radar /home/hoshino/radar /home/hoshino/radar/build /home/hoshino/radar/build /home/hoshino/radar/build/CMakeFiles/ContinuousCoverage.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ContinuousCoverage.dir/depend
 

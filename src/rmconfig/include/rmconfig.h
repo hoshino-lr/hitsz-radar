@@ -30,6 +30,7 @@ public:
     const char* configPath = "rmconfig.json";
     //config
     //
+    int run_mode = 0;
     bool show_origin = false;
     bool show_armor_box = true;
     bool show_light_box = false;
@@ -70,6 +71,8 @@ public:
     //Camera
     camera camConfig1 = camera(1084.32,1084.05,339.53,231.71,-0.0876,0.32596,-0.08626,-0.002323,0.001002,0,-45,0,5,0,"NULL");
     camera camConfig2 = camera(1084.32,1084.05,339.53,231.71,-0.0876,0.32596,-0.08626,-0.002323,0.001002,30,-15,0,5,0,"NULL");
+    camera camConfig3 = camera(1084.32,1084.05,339.53,231.71,-0.0876,0.32596,-0.08626,-0.002323,0.001002,0,-45,0,5,0,"NULL");
+    camera camConfig4 = camera(1084.32,1084.05,339.53,231.71,-0.0876,0.32596,-0.08626,-0.002323,0.001002,30,-15,0,5,0,"NULL");
     std::vector<cv::Rect> camroi_1 = {cv::Rect(100,100,100,100),cv::Rect(200,200,100,100)};
     std::vector<cv::Rect> camroi_2 = {cv::Rect(100,100,100,100),cv::Rect(200,200,100,100)};
   void init_from_file() {
@@ -91,6 +94,7 @@ public:
     }
     // config
       Json::Value config = root["config"];
+      run_mode = config["run_mode"].asInt();
       show_origin = config["show_origin"].asBool();
       show_armor_box = config["show_armor_box"].asBool();
       show_light_box = config["show_light_bo"].asBool();
@@ -165,6 +169,8 @@ public:
     camConfig2.coordinate_x = camera["camera2_x"].asInt();
     camConfig2.coordinate_y = camera["camera2_y"].asInt();
     camConfig2.init();
+    camConfig3.camera_sn = camera["sn_3"].asString();
+    camConfig4.camera_sn = camera["sn_4"].asString();
     ifs.close();
   }
 
@@ -174,6 +180,7 @@ public:
       Json::Value root;
       // config
       Json::Value config;
+      config["run_mode"] = run_mode;
       config["show_origin"] = show_origin;
       config["show_armor_box"] = show_armor_box;
       config["show_light_box"] = show_light_box;
@@ -249,6 +256,8 @@ public:
     camera["camera2_roll"] = camConfig2.roll;
     camera["camera2_x"] = camConfig2.coordinate_x;
     camera["camera2_y"] = camConfig2.coordinate_y;
+    camera["sn_3"] = camConfig3.camera_sn;
+    camera["sn_4"] = camConfig4.camera_sn;
     root["config"] = config;
     root["config_data"] = data;
     root["camera"] = camera;
