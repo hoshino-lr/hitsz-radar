@@ -1,7 +1,7 @@
 import cv2
 #引入库
-cap1 = cv2.VideoCapture(2)
-cap2 = cv2.VideoCapture(0)
+cap1 = cv2.VideoCapture(3)
+cap2 = cv2.VideoCapture(1)
 win1 = "Video1"
 win2 = "Video2"
 cv2.namedWindow(win1)

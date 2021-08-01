@@ -35,16 +35,16 @@ int main(int argc, char **argv) {
 
 void window_init()
 {
-  cv::namedWindow("box1");
-  cv::namedWindow("box2");
-  cv::namedWindow("ori3");
-  cv::namedWindow("ori4");
-  cv::namedWindow("map");
-  cv::moveWindow("box1",0,0);
-  cv::moveWindow("box2",640,0);
-  cv::moveWindow("ori3",1280,0);
-  cv::moveWindow("ori4",0,520);
-  cv::moveWindow("map",800,600);
+  cv::namedWindow("box1-资源岛和敌方前哨站");
+  cv::namedWindow("box2-我方哨兵");
+  cv::namedWindow("ori3-我方前哨站");
+  cv::namedWindow("ori4-资源岛和敌方前哨站");
+  //cv::namedWindow("map");
+  cv::moveWindow("box1-资源岛和敌方前哨站",0,0);
+  cv::moveWindow("box2-我方哨兵",640,0);
+  cv::moveWindow("ori3-我方前哨站",1280,0);
+  cv::moveWindow("ori4-资源岛和敌方前哨站",0,520);
+  //cv::moveWindow("map",800,600);
 }
 static void OnClose() {
   camera1->cam->stop();
@@ -95,7 +95,8 @@ void loop() {
         if(!src1.empty())
         {
           cv::resize(src1,src1,cv::Size(640,480));
-          boxes1 = armor_finder_1->run(src1,map);
+          cv::imshow("box1-资源岛和敌方前哨站",src1);
+          //boxes1 = armor_finder_1->run(src1,map);
         }
 
       }
@@ -105,10 +106,11 @@ void loop() {
         if (!src2.empty())
         {
           cv::resize(src2,src2,cv::Size(640,480));
-          boxes2 = armor_finder_2->run(src2,map);
+          cv::imshow("box2-我方哨兵",src2);
+          //boxes2 = armor_finder_2->run(src2,map);
         }
       }
-      point_dl(boxes1,boxes2,map);
+      //point_dl(boxes1,boxes2,map);
       state = cv::waitKey(1);
       if (config->run_mode)
       {
@@ -118,7 +120,7 @@ void loop() {
           camera3->get_frame(src3);
           if (!src3.empty())
           {
-            cv::imshow("ori3",src3);
+            cv::imshow("ori3-我方前哨站",src3);
           }
         }
         if (camera4->is_open())
@@ -126,7 +128,10 @@ void loop() {
           camera4->get_frame(src4);
           if (!src4.empty())
           {
-            cv::imshow("ori4",src4);
+            cv::Mat ro = cv::Mat(src4.rows,src4.cols,src4.depth());
+            cv::transpose(src4,ro);
+            cv::flip(ro,ro,0);
+            cv::imshow("ori4-资源岛和敌方前哨站",ro);
           }
         }
       }

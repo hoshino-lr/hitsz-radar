@@ -1,3 +1,6 @@
-[ WARN:0] global /tmp/pip-req-build-ms668fyv/opencv/modules/videoio/src/cap_v4l.cpp (1004) tryIoctl VIDEOIO(V4L2:/dev/video2): select() timeout.
-[ WARN:0] global /tmp/pip-req-build-ms668fyv/opencv/modules/videoio/src/cap_v4l.cpp (1004) tryIoctl VIDEOIO(V4L2:/dev/video2): select() timeout.
-[ WARN:0] global /tmp/pip-req-build-ms668fyv/opencv/modules/videoio/src/cap_v4l.cpp (1004) tryIoctl VIDEOIO(V4L2:/dev/video2): select() timeout.
+[ WARN:0] global /tmp/pip-req-build-ms668fyv/opencv/modules/videoio/src/cap_v4l.cpp (893) open VIDEOIO(V4L2:/dev/video2): can't open camera by index
+[ WARN:0] global /tmp/pip-req-build-ms668fyv/opencv/modules/videoio/src/cap_v4l.cpp (893) open VIDEOIO(V4L2:/dev/video0): can't open camera by index
+Traceback (most recent call last):
+  File "./radar_video.py", line 19, in <module>
+    if cv2.waitKey(10) == ord("q"):
+KeyboardInterrupt
